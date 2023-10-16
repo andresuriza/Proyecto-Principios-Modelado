@@ -27,7 +27,7 @@ CREATE TABLE LOTE(
 	Descripcion VARCHAR(20) NOT NULL,
 	ProductoID INTEGER NOT NULL,
 	CantidadRequerida INTEGER NOT NULL,
-	CantidadObtenida INTEGER NOT NULL,
+	CantidadObtenida INTEGER NOT NULL
 );
 
 CREATE TABLE PRODUCTO(
