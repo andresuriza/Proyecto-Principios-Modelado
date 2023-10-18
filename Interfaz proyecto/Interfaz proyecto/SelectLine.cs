@@ -27,6 +27,10 @@ namespace Interfaz_proyecto
             var r1 = new RegistradoEmp();
             this.Visible = false;
             r1.Show();
+
+            // var r1 = new RegistradoEmp();
+            // this.Close();
+            // r1.Show();
         }
     }
 }
