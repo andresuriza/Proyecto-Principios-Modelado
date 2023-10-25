@@ -1,0 +1,8 @@
+## Extensions and Folders we won't need
+.vs/*
+Interfaz proyecto/.vs/*
+Interfaz proyecto/Interfaz proyecto/.vs/*
+
+# Building
+Interfaz proyecto/bin/*
+Interfaz proyecto/obj/*
