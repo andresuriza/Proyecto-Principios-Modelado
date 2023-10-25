@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace TabletUI
 {
-    public partial class PantallaIngreso : Form
+    public partial class OpcionesSupervisor : Form
     {
-        public PantallaIngreso()
+        public OpcionesSupervisor()
         {
             InitializeComponent();
-        }
-
-        private void button1_MouseClick(object sender, MouseEventArgs e)
-        {
-        this.Visible = false;
-        var w1 = new SelectLine();
-        w1.Show();
         }
     }
 }

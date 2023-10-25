@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andres\\Desktop\\TabletUI\\TabletUI\\TabletUI.csproj": {}
+    "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andres\\Desktop\\TabletUI\\TabletUI\\TabletUI.csproj": {
+    "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andres\\Desktop\\TabletUI\\TabletUI\\TabletUI.csproj",
+        "projectUniqueName": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
         "projectName": "TabletUI",
-        "projectPath": "C:\\Users\\andres\\Desktop\\TabletUI\\TabletUI\\TabletUI.csproj",
+        "projectPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
         "packagesPath": "C:\\Users\\andres\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andres\\Desktop\\TabletUI\\TabletUI\\obj\\",
+        "outputPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andres\\AppData\\Roaming\\NuGet\\NuGet.Config",

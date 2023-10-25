@@ -1,6 +1,6 @@
 ﻿namespace TabletUI
 {
-    partial class PantallaIngreso
+    partial class ListaMiembros
     {
         /// <summary>
         /// Required designer variable.
@@ -28,60 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            selectLine_b = new Button();
+            listBox1 = new ListBox();
+            button1 = new Button();
             label1 = new Label();
-            richTextBox1 = new RichTextBox();
             SuspendLayout();
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Items.AddRange(new object[] { "2021001", "2021002" });
+            listBox1.Location = new Point(120, 132);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(907, 524);
+            listBox1.TabIndex = 3;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            listBox1.MouseDoubleClick += listBox1_MouseDoubleClick;
             // 
             // button1
             // 
-            selectLine_b.Location = new Point(486, 449);
-            selectLine_b.Margin = new Padding(3, 4, 3, 4);
-            selectLine_b.Name = "button1";
-            selectLine_b.Size = new Size(232, 88);
-            selectLine_b.TabIndex = 0;
-            selectLine_b.Text = "Ingresar";
-            selectLine_b.UseVisualStyleBackColor = true;
-            selectLine_b.MouseClick += button1_MouseClick;
+            button1.Location = new Point(71, 35);
+            button1.Name = "button1";
+            button1.Size = new Size(182, 47);
+            button1.TabIndex = 4;
+            button1.Text = "Regresar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(550, 224);
+            label1.Location = new Point(435, 98);
             label1.Name = "label1";
-            label1.Size = new Size(126, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Ingrese su código";
+            label1.Size = new Size(297, 20);
+            label1.TabIndex = 5;
+            label1.Text = "Lista de empleados en línea de producción:\r\n";
             // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(228, 299);
-            richTextBox1.Margin = new Padding(3, 4, 3, 4);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(747, 58);
-            richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
-            // 
-            // PantallaIngreso
+            // GestionarTecnico
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
-            Controls.Add(richTextBox1);
             Controls.Add(label1);
-            Controls.Add(selectLine_b);
+            Controls.Add(button1);
+            Controls.Add(listBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "PantallaIngreso";
-            Text = "PantallaIngreso";
+            Name = "GestionarTecnico";
+            Text = "GestionarTecnico";
+            Load += GestionarTecnico_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button selectLine_b;
+        private ListBox listBox1;
+        private Button button1;
         private Label label1;
-        private RichTextBox richTextBox1;
     }
 }

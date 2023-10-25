@@ -1,6 +1,6 @@
 ﻿namespace TabletUI
 {
-    partial class RegistradoEmp
+    partial class OpcionesLote
     {
         /// <summary>
         /// Required designer variable.
@@ -28,48 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            ListViewItem listViewItem1 = new ListViewItem("Lote1");
+            ListViewItem listViewItem2 = new ListViewItem("Lote2");
+            listView1 = new ListView();
+            d = new ColumnHeader();
             button1 = new Button();
             SuspendLayout();
             // 
-            // label1
+            // listView1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(488, 275);
-            label1.Name = "label1";
-            label1.Size = new Size(146, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Registrado con éxito";
+            listView1.Columns.AddRange(new ColumnHeader[] { d });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            listView1.Location = new Point(41, 71);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(539, 527);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // d
+            // 
+            d.Width = 1000;
             // 
             // button1
             // 
-            button1.Location = new Point(430, 505);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(739, 294);
             button1.Name = "button1";
-            button1.Size = new Size(260, 76);
+            button1.Size = new Size(300, 78);
             button1.TabIndex = 1;
-            button1.Text = "Entendido";
+            button1.Text = "Crear lote";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
-            // RegistradoEmp
+            // OpcionesLote
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
             Controls.Add(button1);
-            Controls.Add(label1);
+            Controls.Add(listView1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "RegistradoEmp";
-            Text = "RegistradoEmp";
+            Name = "OpcionesLote";
+            Text = "OpcionesLote";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private ListView listView1;
+        private ColumnHeader d;
         private Button button1;
     }
 }

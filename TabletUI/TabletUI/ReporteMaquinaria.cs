@@ -10,23 +10,18 @@ using System.Windows.Forms;
 
 namespace TabletUI
 {
-    public partial class SelectLine : Form
+    public partial class ReporteMaquinaria : Form
     {
-        public SelectLine()
+        public ReporteMaquinaria()
         {
             InitializeComponent();
         }
 
-        private void SelectLine_Load(object sender, EventArgs e)
+        private void button1_MouseClick(object sender, MouseEventArgs e)
         {
-
-        }
-
-        private void button_Click(object sender, EventArgs e)
-        {
-            var r1 = new RegistradoEmp();
             this.Visible = false;
-            r1.Show();
+            var w1 = new OpcionesTecnico();
+            w1.Show();
         }
     }
 }

@@ -28,283 +28,302 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            linea1 = new Button();
+            linea2 = new Button();
+            linea3 = new Button();
+            linea4 = new Button();
+            linea5 = new Button();
+            linea6 = new Button();
+            linea7 = new Button();
+            linea8 = new Button();
+            linea9 = new Button();
+            linea10 = new Button();
+            linea11 = new Button();
+            linea12 = new Button();
+            linea13 = new Button();
+            linea14 = new Button();
+            linea15 = new Button();
+            linea16 = new Button();
+            linea17 = new Button();
+            linea18 = new Button();
+            linea19 = new Button();
+            linea20 = new Button();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(66, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(205, 102);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_Click);
+            linea1.Location = new Point(66, 69);
+            linea1.Margin = new Padding(3, 4, 3, 4);
+            linea1.Name = "button1";
+            linea1.Size = new Size(205, 128);
+            linea1.TabIndex = 0;
+            linea1.Text = "1";
+            linea1.UseVisualStyleBackColor = true;
+            linea1.Click += button_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(324, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(205, 102);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button_Click);
+            linea2.Location = new Point(324, 69);
+            linea2.Margin = new Padding(3, 4, 3, 4);
+            linea2.Name = "button2";
+            linea2.Size = new Size(205, 128);
+            linea2.TabIndex = 1;
+            linea2.Text = "2";
+            linea2.UseVisualStyleBackColor = true;
+            linea2.Click += button_Click;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(589, 55);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(205, 102);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button_Click);
+            linea3.Location = new Point(589, 69);
+            linea3.Margin = new Padding(3, 4, 3, 4);
+            linea3.Name = "button3";
+            linea3.Size = new Size(205, 128);
+            linea3.TabIndex = 2;
+            linea3.Text = "3";
+            linea3.UseVisualStyleBackColor = true;
+            linea3.Click += button_Click;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(861, 55);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(205, 102);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button_Click);
+            linea4.Location = new Point(861, 69);
+            linea4.Margin = new Padding(3, 4, 3, 4);
+            linea4.Name = "button4";
+            linea4.Size = new Size(205, 128);
+            linea4.TabIndex = 3;
+            linea4.Text = "4";
+            linea4.UseVisualStyleBackColor = true;
+            linea4.Click += button_Click;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(66, 184);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(205, 102);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button_Click);
+            linea5.Location = new Point(66, 230);
+            linea5.Margin = new Padding(3, 4, 3, 4);
+            linea5.Name = "button5";
+            linea5.Size = new Size(205, 128);
+            linea5.TabIndex = 4;
+            linea5.Text = "5";
+            linea5.UseVisualStyleBackColor = true;
+            linea5.Click += button_Click;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(324, 184);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(205, 102);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button_Click);
+            linea6.Location = new Point(324, 230);
+            linea6.Margin = new Padding(3, 4, 3, 4);
+            linea6.Name = "button6";
+            linea6.Size = new Size(205, 128);
+            linea6.TabIndex = 5;
+            linea6.Text = "6";
+            linea6.UseVisualStyleBackColor = true;
+            linea6.Click += button_Click;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(589, 184);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(205, 102);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button_Click);
+            linea7.Location = new Point(589, 230);
+            linea7.Margin = new Padding(3, 4, 3, 4);
+            linea7.Name = "button7";
+            linea7.Size = new Size(205, 128);
+            linea7.TabIndex = 6;
+            linea7.Text = "7";
+            linea7.UseVisualStyleBackColor = true;
+            linea7.Click += button_Click;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(861, 184);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(205, 102);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "8";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button_Click);
+            linea8.Location = new Point(861, 230);
+            linea8.Margin = new Padding(3, 4, 3, 4);
+            linea8.Name = "button8";
+            linea8.Size = new Size(205, 128);
+            linea8.TabIndex = 7;
+            linea8.Text = "8";
+            linea8.UseVisualStyleBackColor = true;
+            linea8.Click += button_Click;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(66, 338);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(205, 102);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button_Click);
+            linea9.Location = new Point(66, 422);
+            linea9.Margin = new Padding(3, 4, 3, 4);
+            linea9.Name = "button9";
+            linea9.Size = new Size(205, 128);
+            linea9.TabIndex = 8;
+            linea9.Text = "9";
+            linea9.UseVisualStyleBackColor = true;
+            linea9.Click += button_Click;
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(324, 338);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(205, 102);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "10";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button_Click);
+            linea10.Location = new Point(324, 422);
+            linea10.Margin = new Padding(3, 4, 3, 4);
+            linea10.Name = "button10";
+            linea10.Size = new Size(205, 128);
+            linea10.TabIndex = 9;
+            linea10.Text = "10";
+            linea10.UseVisualStyleBackColor = true;
+            linea10.Click += button_Click;
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(589, 338);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(205, 102);
-            this.button11.TabIndex = 10;
-            this.button11.Text = "11";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button_Click);
+            linea11.Location = new Point(589, 422);
+            linea11.Margin = new Padding(3, 4, 3, 4);
+            linea11.Name = "button11";
+            linea11.Size = new Size(205, 128);
+            linea11.TabIndex = 10;
+            linea11.Text = "11";
+            linea11.UseVisualStyleBackColor = true;
+            linea11.Click += button_Click;
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(861, 338);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(205, 102);
-            this.button12.TabIndex = 11;
-            this.button12.Text = "12";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button_Click);
+            linea12.Location = new Point(861, 422);
+            linea12.Margin = new Padding(3, 4, 3, 4);
+            linea12.Name = "button12";
+            linea12.Size = new Size(205, 128);
+            linea12.TabIndex = 11;
+            linea12.Text = "12";
+            linea12.UseVisualStyleBackColor = true;
+            linea12.Click += button_Click;
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(66, 477);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(205, 102);
-            this.button13.TabIndex = 12;
-            this.button13.Text = "13";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button_Click);
+            linea13.Location = new Point(66, 596);
+            linea13.Margin = new Padding(3, 4, 3, 4);
+            linea13.Name = "button13";
+            linea13.Size = new Size(205, 128);
+            linea13.TabIndex = 12;
+            linea13.Text = "13";
+            linea13.UseVisualStyleBackColor = true;
+            linea13.Click += button_Click;
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(315, 477);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(205, 102);
-            this.button14.TabIndex = 13;
-            this.button14.Text = "14";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button_Click);
+            linea14.Location = new Point(315, 596);
+            linea14.Margin = new Padding(3, 4, 3, 4);
+            linea14.Name = "button14";
+            linea14.Size = new Size(205, 128);
+            linea14.TabIndex = 13;
+            linea14.Text = "14";
+            linea14.UseVisualStyleBackColor = true;
+            linea14.Click += button_Click;
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(589, 477);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(205, 102);
-            this.button15.TabIndex = 14;
-            this.button15.Text = "15";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button_Click);
+            linea15.Location = new Point(589, 596);
+            linea15.Margin = new Padding(3, 4, 3, 4);
+            linea15.Name = "button15";
+            linea15.Size = new Size(205, 128);
+            linea15.TabIndex = 14;
+            linea15.Text = "15";
+            linea15.UseVisualStyleBackColor = true;
+            linea15.Click += button_Click;
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(861, 487);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(205, 102);
-            this.button16.TabIndex = 15;
-            this.button16.Text = "16";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button_Click);
+            linea16.Location = new Point(861, 609);
+            linea16.Margin = new Padding(3, 4, 3, 4);
+            linea16.Name = "button16";
+            linea16.Size = new Size(205, 128);
+            linea16.TabIndex = 15;
+            linea16.Text = "16";
+            linea16.UseVisualStyleBackColor = true;
+            linea16.Click += button_Click;
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(66, 631);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(205, 102);
-            this.button17.TabIndex = 16;
-            this.button17.Text = "17";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button_Click);
+            linea17.Location = new Point(66, 789);
+            linea17.Margin = new Padding(3, 4, 3, 4);
+            linea17.Name = "button17";
+            linea17.Size = new Size(205, 128);
+            linea17.TabIndex = 16;
+            linea17.Text = "17";
+            linea17.UseVisualStyleBackColor = true;
+            linea17.Click += button_Click;
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(324, 631);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(205, 102);
-            this.button18.TabIndex = 17;
-            this.button18.Text = "18";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button_Click);
+            linea18.Location = new Point(324, 789);
+            linea18.Margin = new Padding(3, 4, 3, 4);
+            linea18.Name = "button18";
+            linea18.Size = new Size(205, 128);
+            linea18.TabIndex = 17;
+            linea18.Text = "18";
+            linea18.UseVisualStyleBackColor = true;
+            linea18.Click += button_Click;
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(589, 631);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(205, 102);
-            this.button19.TabIndex = 18;
-            this.button19.Text = "19";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button_Click);
+            linea19.Location = new Point(589, 789);
+            linea19.Margin = new Padding(3, 4, 3, 4);
+            linea19.Name = "button19";
+            linea19.Size = new Size(205, 128);
+            linea19.TabIndex = 18;
+            linea19.Text = "19";
+            linea19.UseVisualStyleBackColor = true;
+            linea19.Click += button_Click;
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(861, 631);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(205, 102);
-            this.button20.TabIndex = 19;
-            this.button20.Text = "20";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button_Click);
+            linea20.Location = new Point(861, 789);
+            linea20.Margin = new Padding(3, 4, 3, 4);
+            linea20.Name = "button20";
+            linea20.Size = new Size(205, 128);
+            linea20.TabIndex = 19;
+            linea20.Text = "20";
+            linea20.UseVisualStyleBackColor = true;
+            linea20.Click += button_Click;
             // 
             // SelectLine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1172, 691);
-            this.Controls.Add(this.button20);
-            this.Controls.Add(this.button19);
-            this.Controls.Add(this.button18);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "SelectLine";
-            this.Text = "SelectLine";
-            this.Load += new System.EventHandler(this.SelectLine_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            ClientSize = new Size(1172, 691);
+            Controls.Add(linea20);
+            Controls.Add(linea19);
+            Controls.Add(linea18);
+            Controls.Add(linea17);
+            Controls.Add(linea16);
+            Controls.Add(linea15);
+            Controls.Add(linea14);
+            Controls.Add(linea13);
+            Controls.Add(linea12);
+            Controls.Add(linea11);
+            Controls.Add(linea10);
+            Controls.Add(linea9);
+            Controls.Add(linea8);
+            Controls.Add(linea7);
+            Controls.Add(linea6);
+            Controls.Add(linea5);
+            Controls.Add(linea4);
+            Controls.Add(linea3);
+            Controls.Add(linea2);
+            Controls.Add(linea1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "SelectLine";
+            Text = "SelectLine";
+            Load += SelectLine_Load;
+            ResumeLayout(false);
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-    
+        private Button linea1;
+        private Button linea2;
+        private Button linea3;
+        private Button linea4;
+        private Button linea5;
+        private Button linea6;
+        private Button linea7;
+        private Button linea8;
+        private Button linea9;
+        private Button linea10;
+        private Button linea11;
+        private Button linea12;
+        private Button linea13;
+        private Button linea14;
+        private Button linea15;
+        private Button linea16;
+        private Button linea17;
+        private Button linea18;
+        private Button linea19;
+        private Button linea20;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TabletUI
 {
-    partial class RegistradoEmp
+    partial class OpcionesEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -30,39 +30,59 @@
         {
             label1 = new Label();
             button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(488, 275);
+            label1.Location = new Point(444, 113);
             label1.Name = "label1";
-            label1.Size = new Size(146, 20);
+            label1.Size = new Size(272, 20);
             label1.TabIndex = 0;
-            label1.Text = "Registrado con éxito";
+            label1.Text = "Hola, empleado: Seleccione una opción";
             // 
             // button1
             // 
-            button1.Location = new Point(430, 505);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(211, 276);
             button1.Name = "button1";
-            button1.Size = new Size(260, 76);
+            button1.Size = new Size(216, 84);
             button1.TabIndex = 1;
-            button1.Text = "Entendido";
+            button1.Text = "Terminar turno";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
-            // RegistradoEmp
+            // button2
+            // 
+            button2.Location = new Point(696, 276);
+            button2.Name = "button2";
+            button2.Size = new Size(216, 84);
+            button2.TabIndex = 2;
+            button2.Text = "Break";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(460, 440);
+            button3.Name = "button3";
+            button3.Size = new Size(216, 84);
+            button3.TabIndex = 3;
+            button3.Text = "Regresar";
+            button3.UseVisualStyleBackColor = true;
+            button3.MouseClick += button3_MouseClick;
+            // 
+            // OpcionesEmpleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "RegistradoEmp";
-            Text = "RegistradoEmp";
+            Name = "OpcionesEmpleado";
+            Text = "OpcionesEmpleado";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -71,5 +91,7 @@
 
         private Label label1;
         private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
