@@ -6,3 +6,6 @@ Interfaz proyecto/Interfaz proyecto/.vs/*
 # Building
 Interfaz proyecto/bin/*
 Interfaz proyecto/obj/*
+TabletUI/.vs
+TabletUI/TabletUI/bin
+TabletUI/TabletUI/obj
