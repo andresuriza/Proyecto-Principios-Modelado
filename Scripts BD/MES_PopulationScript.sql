@@ -30,5 +30,4 @@ VALUES ('Limpiador Facial Suave', 'Limpiador facial suave y refrescante 150g'),
 	   
 INSERT INTO LOTE (ID, Descripcion, ProductoID, CantidadRequerida, CantidadObtenida)
 VALUES ('202310001', 'Lote #1 10/2023', 2, 30, 0),
-		('202310002', 'Lote #2 10/2023', 4, 30, 0);
-		
+		('202310002', 'Lote #2 10/2023', 4, 30, 0);		
