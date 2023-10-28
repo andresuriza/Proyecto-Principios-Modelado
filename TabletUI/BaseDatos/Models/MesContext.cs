@@ -79,7 +79,9 @@ public partial class MesContext : DbContext
 
             entity.ToTable("lote");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id)
+                .HasMaxLength(9)
+                .HasColumnName("id");
             entity.Property(e => e.Cantidadobtenida).HasColumnName("cantidadobtenida");
             entity.Property(e => e.Cantidadrequerida).HasColumnName("cantidadrequerida");
             entity.Property(e => e.Descripcion)
@@ -100,7 +102,9 @@ public partial class MesContext : DbContext
             entity.ToTable("lote_por_linea");
 
             entity.Property(e => e.Lineaid).HasColumnName("lineaid");
-            entity.Property(e => e.Loteid).HasColumnName("loteid");
+            entity.Property(e => e.Loteid)
+                .HasMaxLength(9)
+                .HasColumnName("loteid");
             entity.Property(e => e.Fecha).HasColumnName("fecha");
             entity.Property(e => e.Horafinal).HasColumnName("horafinal");
             entity.Property(e => e.Horainicio).HasColumnName("horainicio");

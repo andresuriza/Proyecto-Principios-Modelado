@@ -7,7 +7,7 @@ public partial class LotePorLinea
 {
     public int Lineaid { get; set; }
 
-    public int Loteid { get; set; }
+    public string Loteid { get; set; } = null!;
 
     public DateOnly Fecha { get; set; }
 

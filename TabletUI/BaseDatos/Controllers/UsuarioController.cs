@@ -42,19 +42,23 @@ public class UsuarioController
 
             Usuario user = context.Usuarios.Find(cedula);
 
-            if (user == null)
+            if (user != null)
             {
                 return "Usuario ya existia, no puede agregarlo dos veces";
             }
             else
             {
-                user.Cedula = cedula;
-                user.Nombre = nombre;
-                user.Apellido1 = ap1;
-                user.Apellido2 = ap2;
-                user.Codigo = codigo;
-                user.Tipousuarioid = tipoUsuario;
-                context.Usuarios.Add(user);
+                Usuario user2 = new Usuario
+                {
+                    Cedula = cedula,
+                    Nombre = nombre,
+                    Apellido1 = ap1,
+                    Apellido2 = ap2,
+                    Codigo = codigo,
+                    Tipousuarioid = tipoUsuario
+                };
+                
+                context.Usuarios.Add(user2);
                 context.SaveChanges();
                 return "Usuario agregado correctamente";
             }

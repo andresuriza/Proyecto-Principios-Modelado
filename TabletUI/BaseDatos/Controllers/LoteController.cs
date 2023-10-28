@@ -39,7 +39,7 @@ public class LoteController
         }
     }
 
-    public string AddLote(int id, string descripcion, int productoid, int cantidadRequerida, 
+    public string AddLote(string id, string descripcion, int productoid, int cantidadRequerida, 
                         int cantidadObtenida = 0)
     {
         try
@@ -51,11 +51,14 @@ public class LoteController
             }
             else
             {
-                lote.Id = id;
-                lote.Descripcion = descripcion;
-                lote.Productoid = productoid;
-                lote.Cantidadrequerida = cantidadRequerida;
-                lote.Cantidadobtenida = cantidadObtenida;
+                Lote lote2 = new Lote
+                {
+                    Id = id,
+                    Descripcion = descripcion,
+                    Productoid = productoid,
+                    Cantidadrequerida = cantidadRequerida,
+                    Cantidadobtenida = cantidadObtenida
+                };
                 context.Lotes.Add(lote);
                 context.SaveChanges();
                 return "Lote agregado correctamente \n";
@@ -68,7 +71,7 @@ public class LoteController
         }
     }
 
-    public string UpdateLote(int id, string descripcion, int productoid, int cantidadRequerida,
+    public string UpdateLote(string id, string descripcion, int productoid, int cantidadRequerida,
                         int cantidadObtenida = 0)
     {
         try
@@ -97,7 +100,7 @@ public class LoteController
         }
     }
 
-    public string UpdateCantidadObtenidaLote(int id, int cantidadObtenida)
+    public string UpdateCantidadObtenidaLote(string id, int cantidadObtenida)
     {
         try
         {
