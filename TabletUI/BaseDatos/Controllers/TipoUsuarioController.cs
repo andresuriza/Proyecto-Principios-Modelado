@@ -13,7 +13,7 @@ public class TipoUsuarioController
         this.context = new MesContext();
     }
 
-    public List<TipoUsuario> GetAllTipoUsuarios()
+    public List<TipoUsuario> GetAllTiposUsuarios()
     {
         try
         {

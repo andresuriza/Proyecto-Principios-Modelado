@@ -2,109 +2,117 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace BaseDatos.Controllers
+namespace BaseDatos.Controllers;
+public class UsuarioController
 {
-    public class UsuarioController
+    private MesContext context;
+    public UsuarioController()
     {
-        private MesContext context;
-        public UsuarioController()
+        this.context = new MesContext();
+    }
+    public List<Usuario> GetAllUsuarios()
+    {
+        try
         {
-            this.context = new MesContext();
+            return context.Usuarios.ToList();
+        }catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            List<Usuario> users = null;
+            return users;
         }
-        public List<Usuario> GetAllUsuarios()
+    }
+    public Usuario GetUsuarioByCedula(string cedula)
+    {
+        try
         {
-            try
+            return context.Usuarios.FirstOrDefault(u => u.Cedula == cedula);
+        }catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            Usuario result = null;
+            return result;
+        }
+    }
+    public string AddUsuario(string cedula, string nombre, string ap1,
+                string ap2, string codigo, int tipoUsuario)
+    {
+        try
+        {
+
+            Usuario user = context.Usuarios.Find(cedula);
+
+            if (user == null)
             {
-                return context.Usuarios.ToList();
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                List<Usuario> users = null;
-                return users;
+                return "Usuario ya existia, no puede agregarlo dos veces";
             }
-        }
-        public Usuario GetUsuarioByCedula(string cedula)
-        {
-            try
+            else
             {
-                return context.Usuarios.FirstOrDefault(u => u.Cedula == cedula);
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                Usuario result = null;
-                return result;
-            }
-        }
-        public void AddUsuario(string cedula, string nombre, string ap1,
-                    string ap2, string codigo, int tipoUsuario)
-        {
-            try
-            {
-                Usuario user = new Usuario()
-                {
-                    Cedula = cedula,
-                    Nombre = nombre,
-                    Apellido1 = ap1,
-                    Apellido2 = ap2,
-                    Codigo = codigo,
-                    Tipousuarioid = tipoUsuario
-                };
+                user.Cedula = cedula;
+                user.Nombre = nombre;
+                user.Apellido1 = ap1;
+                user.Apellido2 = ap2;
+                user.Codigo = codigo;
+                user.Tipousuarioid = tipoUsuario;
                 context.Usuarios.Add(user);
                 context.SaveChanges();
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }    
+                return "Usuario agregado correctamente";
+            }
         }
-        public int UpdateUsuario(string cedula, string nombre, string ap1,
-                    string ap2, string codigo, int tipoUsuario)
+        catch (Exception ex)
         {
-            try
-            {
-                Usuario user = context.Usuarios.Find(cedula);
+            Console.WriteLine(ex.ToString());
+            return "Ocurrio una excepcion";
+        }    
+    }
+    public string UpdateUsuario(string cedula, string nombre, string ap1,
+                string ap2, string codigo, int tipoUsuario)
+    {
+        try
+        {
+            Usuario user = context.Usuarios.Find(cedula);
 
-                if (user == null)
-                {
-                    return 1;
-                }
-                else
-                {
-                    user.Cedula = cedula;
-                    user.Nombre = nombre;
-                    user.Apellido1 = ap1;
-                    user.Apellido2 = ap2;
-                    user.Tipousuarioid = tipoUsuario;
-                    context.Entry(user).State = EntityState.Modified;
-                    context.SaveChanges();
-                    return 0;
-                }
-            }
-            catch (Exception ex)
+            if (user == null)
             {
-                Console.WriteLine(ex.ToString());
-                return 2; 
+                return "Usuario no existe. No lo puede actualizar si no existe";
+            }
+            else
+            {
+                user.Cedula = cedula;
+                user.Nombre = nombre;
+                user.Apellido1 = ap1;
+                user.Apellido2 = ap2;
+                user.Tipousuarioid = tipoUsuario;
+                context.Entry(user).State = EntityState.Modified;
+                context.SaveChanges();
+                return "Usuario actualizado correctamente";
             }
         }
-        public int DeleteUsuario(string cedula)
+        catch (Exception ex)
         {
-            try
-            {
-                var usuario = context.Usuarios.Find(cedula);
-                if (usuario == null)
-                {
-                    return 1;
-                }
-                else
-                {
-                    context.Usuarios.Remove(usuario);
-                    context.SaveChanges();
-                    return 0;
-                }
-            }catch (Exception ex) 
-            {
-                Console.WriteLine(ex.ToString);
-                return 2;
-             }
+            Console.WriteLine(ex.ToString());
+            return "Ocurrio una excepcion"; 
         }
+    }
+    public string DeleteUsuario(string cedula)
+    {
+        try
+        {
+            var usuario = context.Usuarios.Find(cedula);
+            if (usuario == null)
+            {
+                return "Usuario no existe. No puede borrarlo si no existe";
+            }
+            else
+            {
+                context.Usuarios.Remove(usuario);
+                context.SaveChanges();
+                return "Usuario borrado correctamente";
+            }
+        }catch (Exception ex) 
+        {
+            Console.WriteLine(ex.ToString);
+            return "Ocurrio una excepcion";
+            }
     }
 }
