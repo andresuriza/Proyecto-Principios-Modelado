@@ -16,7 +16,7 @@ VALUES  (DEFAULT,1),(DEFAULT,1),(DEFAULT,1),(DEFAULT,1),(DEFAULT,1),
 		(DEFAULT,1),(DEFAULT,1),(DEFAULT,1),(DEFAULT,1),(DEFAULT,1),
 		(DEFAULT,1),(DEFAULT,1),(DEFAULT,1),(DEFAULT,1),(DEFAULT,1);
 
-INSERT INTO Producto (nombre, descripcion)
+INSERT INTO PRODUCTO (nombre, descripcion)
 VALUES ('Limpiador Facial Suave', 'Limpiador facial suave y refrescante 150g'),
        ('Suero de Ácido Hialurónico', 'Suero de ácido hialurónico para hidratación 30mL'),
        ('Mascarilla de Arcilla Purificante', 'Mascarilla de arcilla para purificar la piel 100g'),
@@ -27,3 +27,8 @@ VALUES ('Limpiador Facial Suave', 'Limpiador facial suave y refrescante 150g'),
        ('Crema Antiarrugas de Colágeno', 'Crema facial antienvejecimiento con colágeno 50mL'),
        ('Jabón de Manos de Coco', 'Jabón de manos suave con aroma a coco 250mL'),
        ('Aceite Esencial de Lavanda', 'Aceite esencial de lavanda puro 10mL');
+	   
+INSERT INTO LOTE (ID, Descripcion, ProductoID, CantidadRequerida, CantidadObtenida)
+VALUES ('202310001', 'Lote #1 10/2023', 2, 30, 0),
+		('202310002', 'Lote #2 10/2023', 4, 30, 0);
+		
