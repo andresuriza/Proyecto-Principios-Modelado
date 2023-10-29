@@ -17,9 +17,9 @@ public partial class Usuario
 
     public int Tipousuarioid { get; set; }
 
+    public virtual ICollection<TecnicoPorLinea> TecnicoPorLineas { get; set; } = new List<TecnicoPorLinea>();
+
     public virtual TipoUsuario Tipousuario { get; set; } = null!;
 
     public virtual ICollection<UsuarioPorLinea> UsuarioPorLineas { get; set; } = new List<UsuarioPorLinea>();
-
-    public virtual ICollection<Linea> Lineas { get; set; } = new List<Linea>();
 }

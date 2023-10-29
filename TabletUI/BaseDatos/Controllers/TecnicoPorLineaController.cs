@@ -15,8 +15,33 @@ internal class TecnicoPorLineaController
         this.context = new MesContext();
     }
 
-    public string AddTecnicoEnLinea()
+    public string AddTecnicoEnLinea(int lineaId, string cedulaOperador)
     {
-        return "No esta implementado todavia miher";
+        try
+        {
+            TecnicoPorLinea tecnicoEnLinea = context.TecnicoPorLineas.Find(lineaId, cedulaOperador);
+            if (tecnicoEnLinea == null)
+            {
+                tecnicoEnLinea = new TecnicoPorLinea()
+                {
+                    Lineaid = lineaId,
+                    Cedulatecnico = cedulaOperador,
+                    Filler = null
+                };
+                context.TecnicoPorLineas.Add(tecnicoEnLinea);
+                context.SaveChanges();
+                return "Asignacion de tecnico en linea agregada correctamente";
+            }
+            else
+            {
+                return "Asignacion de tecnico en linea ya existia";
+            }
+        }catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            return "Ocurrio una excepcion al intentar agregar una asignacion de tecnico en una linea";
+        }
     }
+
+    
 }

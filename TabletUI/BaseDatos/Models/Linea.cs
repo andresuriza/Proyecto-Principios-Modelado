@@ -13,7 +13,7 @@ public partial class Linea
 
     public virtual ICollection<LotePorLinea> LotePorLineas { get; set; } = new List<LotePorLinea>();
 
-    public virtual ICollection<UsuarioPorLinea> UsuarioPorLineas { get; set; } = new List<UsuarioPorLinea>();
+    public virtual ICollection<TecnicoPorLinea> TecnicoPorLineas { get; set; } = new List<TecnicoPorLinea>();
 
-    public virtual ICollection<Usuario> Cedulatecnicos { get; set; } = new List<Usuario>();
+    public virtual ICollection<UsuarioPorLinea> UsuarioPorLineas { get; set; } = new List<UsuarioPorLinea>();
 }

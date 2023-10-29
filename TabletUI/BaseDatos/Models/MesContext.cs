@@ -23,6 +23,8 @@ public partial class MesContext : DbContext
 
     public virtual DbSet<Producto> Productos { get; set; }
 
+    public virtual DbSet<TecnicoPorLinea> TecnicoPorLineas { get; set; }
+
     public virtual DbSet<TipoEstado> TipoEstados { get; set; }
 
     public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
@@ -50,27 +52,6 @@ public partial class MesContext : DbContext
                 .HasForeignKey(d => d.Estadoid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("keys4");
-
-            entity.HasMany(d => d.Cedulatecnicos).WithMany(p => p.Lineas)
-                .UsingEntity<Dictionary<string, object>>(
-                    "TecnicoPorLinea",
-                    r => r.HasOne<Usuario>().WithMany()
-                        .HasForeignKey("Cedulatecnico")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("keys9"),
-                    l => l.HasOne<Linea>().WithMany()
-                        .HasForeignKey("Lineaid")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("keys8"),
-                    j =>
-                    {
-                        j.HasKey("Lineaid", "Cedulatecnico").HasName("tecnico_por_linea_pkey");
-                        j.ToTable("tecnico_por_linea");
-                        j.IndexerProperty<int>("Lineaid").HasColumnName("lineaid");
-                        j.IndexerProperty<string>("Cedulatecnico")
-                            .HasMaxLength(9)
-                            .HasColumnName("cedulatecnico");
-                    });
         });
 
         modelBuilder.Entity<Lote>(entity =>
@@ -97,7 +78,7 @@ public partial class MesContext : DbContext
 
         modelBuilder.Entity<LotePorLinea>(entity =>
         {
-            entity.HasKey(e => new { e.Lineaid, e.Loteid }).HasName("lote_por_linea_pkey");
+            entity.HasKey(e => new { e.Lineaid, e.Loteid, e.Fecha, e.Horainicio }).HasName("lote_por_linea_pkey");
 
             entity.ToTable("lote_por_linea");
 
@@ -106,8 +87,8 @@ public partial class MesContext : DbContext
                 .HasMaxLength(9)
                 .HasColumnName("loteid");
             entity.Property(e => e.Fecha).HasColumnName("fecha");
-            entity.Property(e => e.Horafinal).HasColumnName("horafinal");
             entity.Property(e => e.Horainicio).HasColumnName("horainicio");
+            entity.Property(e => e.Horafinal).HasColumnName("horafinal");
 
             entity.HasOne(d => d.Linea).WithMany(p => p.LotePorLineas)
                 .HasForeignKey(d => d.Lineaid)
@@ -133,6 +114,29 @@ public partial class MesContext : DbContext
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .HasColumnName("nombre");
+        });
+
+        modelBuilder.Entity<TecnicoPorLinea>(entity =>
+        {
+            entity.HasKey(e => new { e.Lineaid, e.Cedulatecnico }).HasName("tecnico_por_linea_pkey");
+
+            entity.ToTable("tecnico_por_linea");
+
+            entity.Property(e => e.Lineaid).HasColumnName("lineaid");
+            entity.Property(e => e.Cedulatecnico)
+                .HasMaxLength(9)
+                .HasColumnName("cedulatecnico");
+            entity.Property(e => e.Filler).HasColumnName("filler");
+
+            entity.HasOne(d => d.CedulatecnicoNavigation).WithMany(p => p.TecnicoPorLineas)
+                .HasForeignKey(d => d.Cedulatecnico)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("keys9");
+
+            entity.HasOne(d => d.Linea).WithMany(p => p.TecnicoPorLineas)
+                .HasForeignKey(d => d.Lineaid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("keys8");
         });
 
         modelBuilder.Entity<TipoEstado>(entity =>
