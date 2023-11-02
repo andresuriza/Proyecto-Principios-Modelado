@@ -19,9 +19,10 @@ namespace TabletUI
 
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
-        this.Visible = false;
-        var w1 = new SelectLine();
-        w1.Show();
+            string codigo = richTextBox1.Text;
+            var w1 = new SelectLine(codigo);
+            w1.Show();
+            this.Visible = false;
         }
     }
 }

@@ -41,6 +41,7 @@
             button1.TabIndex = 0;
             button1.Text = "Ver lista de miembros";
             button1.UseVisualStyleBackColor = true;
+            button1.MouseClick += button1_MouseClick;
             // 
             // button2
             // 
@@ -60,6 +61,7 @@
             button3.TabIndex = 2;
             button3.Text = "Opciones de lote";
             button3.UseVisualStyleBackColor = true;
+            button3.MouseClick += button3_MouseClick;
             // 
             // OpcionesTecnico
             // 

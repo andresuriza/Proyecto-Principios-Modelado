@@ -22,11 +22,21 @@ namespace TabletUI
 
         }
 
-        private void button3_MouseClick(object sender, MouseEventArgs e)
+        private void returnButton_MouseClick(object sender, MouseEventArgs e)
         {
             this.Visible = false;
             var w1 = new PantallaIngreso();
             w1.Show();
+        }
+
+        private void terminarButton_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void breakButton_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

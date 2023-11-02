@@ -19,9 +19,24 @@ namespace TabletUI
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Visible = false;
             var w1 = new ReporteMaquinaria();
             w1.Show();
+            this.Visible = false;
+        }
+
+        private void button1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            var miembrosWin = new ListaMiembros();
+            miembrosWin.Show();
+            this.Visible = false;
+        }
+
+        private void button3_MouseClick(object sender, MouseEventArgs e)
+        {
+            var loteWin = new OpcionesLote();
+            loteWin.Show();
+            this.Visible = false;
         }
     }
 }

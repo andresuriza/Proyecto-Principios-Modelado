@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            terminarButton = new Button();
+            breakButton = new Button();
+            returnButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -43,42 +43,44 @@
             label1.TabIndex = 0;
             label1.Text = "Hola, empleado: Seleccione una opción";
             // 
-            // button1
+            // terminarButton
             // 
-            button1.Location = new Point(211, 276);
-            button1.Name = "button1";
-            button1.Size = new Size(216, 84);
-            button1.TabIndex = 1;
-            button1.Text = "Terminar turno";
-            button1.UseVisualStyleBackColor = true;
+            terminarButton.Location = new Point(211, 276);
+            terminarButton.Name = "terminarButton";
+            terminarButton.Size = new Size(216, 84);
+            terminarButton.TabIndex = 1;
+            terminarButton.Text = "Terminar turno";
+            terminarButton.UseVisualStyleBackColor = true;
+            terminarButton.MouseClick += terminarButton_MouseClick;
             // 
-            // button2
+            // breakButton
             // 
-            button2.Location = new Point(696, 276);
-            button2.Name = "button2";
-            button2.Size = new Size(216, 84);
-            button2.TabIndex = 2;
-            button2.Text = "Break";
-            button2.UseVisualStyleBackColor = true;
+            breakButton.Location = new Point(696, 276);
+            breakButton.Name = "breakButton";
+            breakButton.Size = new Size(216, 84);
+            breakButton.TabIndex = 2;
+            breakButton.Text = "Break";
+            breakButton.UseVisualStyleBackColor = true;
+            breakButton.MouseClick += breakButton_MouseClick;
             // 
-            // button3
+            // returnButton
             // 
-            button3.Location = new Point(460, 440);
-            button3.Name = "button3";
-            button3.Size = new Size(216, 84);
-            button3.TabIndex = 3;
-            button3.Text = "Regresar";
-            button3.UseVisualStyleBackColor = true;
-            button3.MouseClick += button3_MouseClick;
+            returnButton.Location = new Point(460, 440);
+            returnButton.Name = "returnButton";
+            returnButton.Size = new Size(216, 84);
+            returnButton.TabIndex = 3;
+            returnButton.Text = "Regresar";
+            returnButton.UseVisualStyleBackColor = true;
+            returnButton.MouseClick += returnButton_MouseClick;
             // 
             // OpcionesEmpleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(returnButton);
+            Controls.Add(breakButton);
+            Controls.Add(terminarButton);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "OpcionesEmpleado";
@@ -90,8 +92,8 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button terminarButton;
+        private Button breakButton;
+        private Button returnButton;
     }
 }

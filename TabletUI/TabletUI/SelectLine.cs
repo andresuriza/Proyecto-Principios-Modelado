@@ -12,8 +12,10 @@ namespace TabletUI
 {
     public partial class SelectLine : Form
     {
-        public SelectLine()
+        string codigo;
+        public SelectLine(string codigo)
         {
+            this.codigo = codigo;
             InitializeComponent();
         }
 
@@ -23,10 +25,11 @@ namespace TabletUI
         }
 
         private void button_Click(object sender, EventArgs e)
-        {
-            var r1 = new RegistradoEmp();
+        {      
+            var registroWin = new RegistradoEmp(codigo);
+            registroWin.Show();   
             this.Visible = false;
-            r1.Show();
+            
         }
     }
 }

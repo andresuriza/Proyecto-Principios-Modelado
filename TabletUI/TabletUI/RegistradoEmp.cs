@@ -12,21 +12,33 @@ namespace TabletUI
 {
     public partial class RegistradoEmp : Form
     {
-        public RegistradoEmp()
+        string codigo;
+        public RegistradoEmp(string  codigo)
         {
+            this.codigo = codigo;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (codigo == "empleado")
+            {
+                var opEmpleado = new OpcionesEmpleado();
+                opEmpleado.Show();
+            }
+
+            else if (codigo == "supervisor") {
+                var opSupervisor = new OpcionesSupervisor();
+                opSupervisor.Show();
+            }
+
+            else if (codigo == "tecnico")
+            {
+                var opTecnico = new OpcionesTecnico();
+                opTecnico.Show();
+            }
+
             this.Visible = false;
-            var w = new PantallaIngreso();
-            w.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
