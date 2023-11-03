@@ -13,9 +13,12 @@ namespace TabletUI
     public partial class RegistradoEmp : Form
     {
         int codigo;
-        public RegistradoEmp(int codigo)
+        int linea;
+
+        public RegistradoEmp(int codigo, int linea)
         {
             this.codigo = codigo;
+            this.linea = linea;
             InitializeComponent();
         }
 
@@ -23,18 +26,19 @@ namespace TabletUI
         {
             if (codigo == 1)
             {
+                // TODO: regresar a pantalla primero
                 var opEmpleado = new OpcionesEmpleado();
                 opEmpleado.Show();
             }
 
             else if (codigo == 2) {
-                var opSupervisor = new OpcionesSupervisor(codigo);
+                var opSupervisor = new OpcionesSupervisor(codigo, linea);
                 opSupervisor.Show();
             }
 
             else if (codigo == 3)
             {
-                var opTecnico = new OpcionesTecnico(codigo);
+                var opTecnico = new OpcionesTecnico(codigo, linea);
                 opTecnico.Show();
             }
 

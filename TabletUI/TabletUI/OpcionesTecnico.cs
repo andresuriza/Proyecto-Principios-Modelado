@@ -13,10 +13,13 @@ namespace TabletUI
     public partial class OpcionesTecnico : Form
     {
         int codigo;
-        public OpcionesTecnico(int codigo)
+        int linea;
+        public OpcionesTecnico(int codigo, int linea)
         {
             this.codigo = codigo;
+            this.linea = linea;
             InitializeComponent();
+            
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
@@ -29,7 +32,7 @@ namespace TabletUI
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
 
-            var miembrosWin = new ListaMiembros(codigo);
+            var miembrosWin = new ListaMiembros(codigo, linea);
             miembrosWin.Show();
             this.Visible = false;
         }

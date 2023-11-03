@@ -11,16 +11,19 @@ public class Program
         TipoUsuarioController tuc = new TipoUsuarioController();
         TipoEstadoController tec = new TipoEstadoController();
         LoteController loteC = new LoteController();
-
+        UsuarioPorLineaController usrPerLine = new UsuarioPorLineaController();
 
         // ESTOS METODOS AGARRAN LOS DATOS DESDE LA BASE DE DATOS
-            
+        //usrPerLine.AddUsuarioEnLinea("118891234", 1, new DateOnly(2023, 11, 03), new TimeOnly(9, 0), new TimeOnly(17, 0));
+        //usrPerLine.DeleteUsuarioEnLinea("118891234", 1);
         List<Usuario> listaUsers = uc.GetAllUsuarios();
         List<Linea> listaLineas = lc.GetAllLineas();
         List<TipoUsuario> listaTiposUsuarios = tuc.GetAllTiposUsuarios();
         List<TipoEstado> listaTiposEstados = tec.GetAllTiposEstados();
         List<Lote> listaLotes = loteC.GetAllLotes();
+        List<UsuarioPorLinea> listaUsersPorL = usrPerLine.GetAllUsuarios();
 
+    
         // IMPRESION DE LOS DATOS EN CONSOLA
 
         Console.WriteLine("USUARIOS EN LA BASE DE DATOS");
@@ -33,6 +36,18 @@ public class Program
                                 " Apell2: " + listaUsers[i].Apellido2 +
                                 " Codigo: " + listaUsers[i].Codigo +
                                 " TipoUsuarioId: " + listaUsers[i].Tipousuarioid);
+        }
+        Console.WriteLine("\n");
+
+        Console.WriteLine("USUARIOS EN CADA LISTA");
+        //Console.WriteLine(res);
+        for (int i = 0; i < listaUsersPorL.Count; i++)
+        {
+            Console.WriteLine("Cedula: " + listaUsersPorL[i].Cedula +
+                                " ID linea: " + listaUsersPorL[i].Lineaid +
+                                " Fecha: " + listaUsersPorL[i].Fecha +
+                                " Hora inicio: " + listaUsersPorL[i].Horainicio +
+                                " Hora final: " + listaUsersPorL[i].Horafinal);
         }
         Console.WriteLine("\n");
 

@@ -17,18 +17,18 @@ namespace TabletUI
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             codigo = richTextBox1.Text;
-            
+
 
             if (uc.GetUsuarioName(codigo) == codigo)
             {
-                var w1 = new SelectLine(uc.GetUsuarioType(codigo));
+                var w1 = new SelectLine(uc.GetUsuarioType(codigo), codigo);
                 w1.Show();
                 this.Visible = false;
             }
 
             else if (uc.GetUsuarioName(codigo) == "n/a")
             {
-                Debug.WriteLine("No existe");
+                errorLabel.Show();
             }
         }
     }

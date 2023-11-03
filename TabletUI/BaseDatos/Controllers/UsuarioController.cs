@@ -38,6 +38,11 @@ public class UsuarioController
         }
     }
 
+    public string GetUsuarioCedula(string codigo)
+    {
+        return GetUsuarioByCodigo(codigo).Cedula;
+    }
+
     public Usuario GetUsuarioByCodigo(string codigo)
     {
         try

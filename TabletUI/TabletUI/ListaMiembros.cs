@@ -7,30 +7,67 @@ namespace TabletUI
     public partial class ListaMiembros : Form
     {
         int codigo;
+        int lineaId;
+
         UsuarioController uc = new UsuarioController();
-        public ListaMiembros(int codigo)
+        UsuarioPorLineaController usrPerLinea = new UsuarioPorLineaController();
+        public ListaMiembros(int codigo, int lineaId)
         {
             
             this.codigo = codigo;
+            this.lineaId = lineaId;
             InitializeComponent();
             GetMiembros();
+            //deleteAll();
+        }
+
+        private void deleteAll()
+        {
+            foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
+            {
+                Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 1);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 2);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 3);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 4);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 5);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 6);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 7);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 8);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 9);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 10);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 11);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 12);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 13);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 14);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 15);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 16);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 17);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 18);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 19);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 20);
+            }
         }
 
         private void GetMiembros()
         {
-            foreach (var empleado in uc.GetAllUsuarios())
+ 
+            foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
-                
-                if (empleado.Tipousuarioid == 3)
-                {
-                    listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2 + " (Técnico)");
-                }
+                Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
 
-                else if (empleado.Tipousuarioid == 1)
+                if (empleadoLista.Lineaid == lineaId)
                 {
-                    listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2);
+                    if (empleado.Tipousuarioid == 1)
+                    {
+                        listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2);
+                    }
+                    else if (empleado.Tipousuarioid == 3)
+                    {
+                        listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2 + " (Tecnico)");
+                    }
                 }
-                    
+     
             }
         }
 
@@ -39,6 +76,7 @@ namespace TabletUI
 
         }
 
+        /*
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             listBox1.SelectedItem = "Técnico actual";
@@ -48,7 +86,7 @@ namespace TabletUI
         {
 
         }
-
+        */
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -58,12 +96,12 @@ namespace TabletUI
         {
             if (codigo == 2)
             {
-                var superWin = new OpcionesSupervisor(codigo);
+                var superWin = new OpcionesSupervisor(codigo, lineaId);
                 superWin.Show();
             }
             else if (codigo == 3)
             {
-                var superWin = new OpcionesTecnico(codigo);
+                var superWin = new OpcionesTecnico(codigo, lineaId);
                 superWin.Show();
             }
 

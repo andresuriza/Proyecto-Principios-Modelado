@@ -24,7 +24,7 @@ namespace TabletUI
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             this.Visible = false;
-            var w1 = new OpcionesTecnico(codigo);
+            var w1 = new OpcionesTecnico(codigo, 0);
             w1.Show();
         }
 
@@ -39,7 +39,7 @@ namespace TabletUI
             else
             {
                 estado = "funcional";
-                estadoLabel.Text = "funcional";
+                estadoLabel.Text = "funcionando";
                 estadoButton.Text = "Marcar fallo";
             }
         }

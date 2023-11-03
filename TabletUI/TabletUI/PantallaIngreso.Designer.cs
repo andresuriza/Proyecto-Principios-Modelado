@@ -31,13 +31,14 @@
             selectLine_b = new Button();
             label1 = new Label();
             richTextBox1 = new RichTextBox();
+            errorLabel = new Label();
             SuspendLayout();
             // 
-            // button1
+            // selectLine_b
             // 
             selectLine_b.Location = new Point(486, 449);
             selectLine_b.Margin = new Padding(3, 4, 3, 4);
-            selectLine_b.Name = "button1";
+            selectLine_b.Name = "selectLine_b";
             selectLine_b.Size = new Size(232, 88);
             selectLine_b.TabIndex = 0;
             selectLine_b.Text = "Ingresar";
@@ -49,9 +50,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(550, 224);
             label1.Name = "label1";
-            label1.Size = new Size(126, 20);
+            label1.Size = new Size(129, 20);
             label1.TabIndex = 1;
-            label1.Text = "Ingrese su código";
+            label1.Text = "Ingrese su código:";
             // 
             // richTextBox1
             // 
@@ -62,11 +63,23 @@
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
             // 
+            // errorLabel
+            // 
+            errorLabel.AutoSize = true;
+            errorLabel.ForeColor = Color.Red;
+            errorLabel.Location = new Point(431, 381);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(330, 20);
+            errorLabel.TabIndex = 3;
+            errorLabel.Text = "Código no es válido, por favor intentar de nuevo";
+            errorLabel.Visible = false;
+            // 
             // PantallaIngreso
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
+            Controls.Add(errorLabel);
             Controls.Add(richTextBox1);
             Controls.Add(label1);
             Controls.Add(selectLine_b);
@@ -83,5 +96,6 @@
         private Button selectLine_b;
         private Label label1;
         private RichTextBox richTextBox1;
+        private Label errorLabel;
     }
 }

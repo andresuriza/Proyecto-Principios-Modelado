@@ -72,7 +72,6 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ListaMiembros";
             Text = "GestionarTecnico";
-            Load += GestionarTecnico_Load;
             ResumeLayout(false);
             PerformLayout();
         }

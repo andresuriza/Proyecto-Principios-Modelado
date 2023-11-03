@@ -44,12 +44,12 @@ namespace TabletUI
         {
             if (codigo == 2)
             {
-                var superWin = new OpcionesSupervisor(codigo);
+                var superWin = new OpcionesSupervisor(codigo, 0);
                 superWin.Show();
             }
             else if (codigo == 3)
             {
-                var superWin = new OpcionesTecnico(codigo);
+                var superWin = new OpcionesTecnico(codigo, 0);
                 superWin.Show();
             }
 

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using BaseDatos.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,13 @@ namespace TabletUI
 {
     public partial class SelectLine : Form
     {
-        int codigo;
-        public SelectLine(int codigo)
+        int usrTipo;
+        string codigo;
+        UsuarioPorLineaController usrPerLine = new UsuarioPorLineaController();
+        UsuarioController uc = new UsuarioController();
+        public SelectLine(int usrTipo, string codigo)
         {
+            this.usrTipo = usrTipo;
             this.codigo = codigo;
             InitializeComponent();
         }
@@ -25,11 +31,16 @@ namespace TabletUI
         }
 
         private void button_Click(object sender, EventArgs e)
-        {      
-            var registroWin = new RegistradoEmp(codigo);
+        {
+            int linea = Int32.Parse((sender as Button).Text);
+            string cedula = uc.GetUsuarioByCodigo(codigo).Cedula;
+            usrPerLine.AddUsuarioEnLinea(cedula, linea, new DateOnly(2023, 
+                11, 03), new TimeOnly(9, 0), new TimeOnly(17, 0));
+            
+            //usrPerLine.DeleteUsuarioEnLinea("118891234", 1);
+            var registroWin = new RegistradoEmp(usrTipo, linea);
             registroWin.Show();   
             this.Visible = false;
-            
         }
     }
 }

@@ -3,15 +3,17 @@
     public partial class OpcionesSupervisor : Form
     {
         int codigo;
-        public OpcionesSupervisor(int codigo)
+        int linea;
+        public OpcionesSupervisor(int codigo, int linea)
         {
             this.codigo = codigo;
+            this.linea = linea;
             InitializeComponent();
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-            var miembrosWin = new ListaMiembros(codigo);
+            var miembrosWin = new ListaMiembros(codigo, linea);
             miembrosWin.Show();
             this.Visible = false;
 

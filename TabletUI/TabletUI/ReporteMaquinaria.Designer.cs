@@ -67,11 +67,11 @@
             // 
             estadoLabel.AutoSize = true;
             estadoLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            estadoLabel.Location = new Point(732, 220);
+            estadoLabel.Location = new Point(727, 220);
             estadoLabel.Name = "estadoLabel";
-            estadoLabel.Size = new Size(99, 20);
+            estadoLabel.Size = new Size(97, 20);
             estadoLabel.TabIndex = 4;
-            estadoLabel.Text = "Funcionando";
+            estadoLabel.Text = "funcionando";
             // 
             // ReporteMaquinaria
             // 
