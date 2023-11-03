@@ -10,18 +10,38 @@ using System.Windows.Forms;
 
 namespace TabletUI
 {
+
     public partial class ReporteMaquinaria : Form
     {
-        public ReporteMaquinaria()
+        int codigo;
+        string estado = "funcional";
+        public ReporteMaquinaria(int codigo)
         {
+            this.codigo = codigo;
             InitializeComponent();
         }
 
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             this.Visible = false;
-            var w1 = new OpcionesTecnico();
+            var w1 = new OpcionesTecnico(codigo);
             w1.Show();
+        }
+
+        private void estadoButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (estado == "funcional")
+            {
+                estado = "fallo";
+                estadoLabel.Text = "con fallos";
+                estadoButton.Text = "Marcar funcional";
+            }
+            else
+            {
+                estado = "funcional";
+                estadoLabel.Text = "funcional";
+                estadoButton.Text = "Marcar fallo";
+            }
         }
     }
 }

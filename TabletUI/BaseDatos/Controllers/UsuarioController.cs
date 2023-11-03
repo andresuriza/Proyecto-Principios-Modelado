@@ -10,6 +10,7 @@ public class UsuarioController
     {
         this.context = new MesContext();
     }
+
     public List<Usuario> GetAllUsuarios()
     {
         try
@@ -27,13 +28,51 @@ public class UsuarioController
         try
         {
             return context.Usuarios.FirstOrDefault(u => u.Cedula == cedula);
-        }catch (Exception ex)
+        }
+        
+        catch (Exception ex)
         {
             Console.WriteLine(ex.ToString());
             Usuario result = null;
             return result;
         }
     }
+
+    public Usuario GetUsuarioByCodigo(string codigo)
+    {
+        try
+        {
+            return context.Usuarios.FirstOrDefault(u => u.Codigo == codigo);
+        }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            Usuario result = null;
+            return result;
+        }
+    }
+
+    public string GetUsuarioName(string codigo)
+    {
+        if (GetUsuarioByCodigo(codigo) == null)
+        {
+            return "n/a";
+        }
+
+        else
+        {
+            return GetUsuarioByCodigo(codigo).Codigo;
+        }
+    }
+
+    public int GetUsuarioType(string codigo)
+    {
+        
+        return GetUsuarioByCodigo(codigo).Tipousuarioid;
+        
+    }
+
     public string AddUsuario(string cedula, string nombre, string ap1,
                 string ap2, string codigo, int tipoUsuario)
     {

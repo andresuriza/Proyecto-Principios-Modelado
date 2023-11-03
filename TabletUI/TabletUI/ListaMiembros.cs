@@ -1,27 +1,36 @@
-﻿namespace TabletUI
+﻿using BaseDatos.Controllers;
+using BaseDatos.Models;
+using System.Diagnostics;
+
+namespace TabletUI
 {
     public partial class ListaMiembros : Form
     {
-        // TODO: Condicional para verificar si el que accesa el código es técnico o supervisor
-        public ListaMiembros()
+        int codigo;
+        UsuarioController uc = new UsuarioController();
+        public ListaMiembros(int codigo)
         {
+            
+            this.codigo = codigo;
             InitializeComponent();
+            GetMiembros();
         }
 
-        private void UpdateListBoxItem(ListBox lb, object item)
+        private void GetMiembros()
         {
-            int index = lb.Items.IndexOf(item);
-            int currIndex = lb.SelectedIndex;
-            lb.BeginUpdate();
-            try
+            foreach (var empleado in uc.GetAllUsuarios())
             {
-                lb.ClearSelected();
-                lb.Items[index] = item;
-                lb.SelectedIndex = currIndex;
-            }
-            finally
-            {
-                lb.EndUpdate();
+                
+                if (empleado.Tipousuarioid == 3)
+                {
+                    listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2 + " (Técnico)");
+                }
+
+                else if (empleado.Tipousuarioid == 1)
+                {
+                    listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2);
+                }
+                    
             }
         }
 
@@ -47,7 +56,18 @@
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            if (codigo == 2)
+            {
+                var superWin = new OpcionesSupervisor(codigo);
+                superWin.Show();
+            }
+            else if (codigo == 3)
+            {
+                var superWin = new OpcionesTecnico(codigo);
+                superWin.Show();
+            }
 
+            this.Visible = false;
         }
     }
 }

@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace TabletUI
+﻿namespace TabletUI
 {
     public partial class OpcionesSupervisor : Form
     {
-        public OpcionesSupervisor()
+        int codigo;
+        public OpcionesSupervisor(int codigo)
         {
+            this.codigo = codigo;
             InitializeComponent();
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-            var miembrosWin = new ListaMiembros();
+            var miembrosWin = new ListaMiembros(codigo);
             miembrosWin.Show();
             this.Visible = false;
 
@@ -27,14 +19,22 @@ namespace TabletUI
 
         private void button3_MouseClick(object sender, MouseEventArgs e)
         {
-            var loteWin = new OpcionesLote();
+            var loteWin = new OpcionesLote(codigo);
             loteWin.Show();
             this.Visible = false;
         }
 
         private void button4_MouseClick(object sender, MouseEventArgs e)
         {
+            // Logica para break
+        }
 
+    
+        private void button1_MouseClick(object sender, MouseEventArgs e)
+        {
+            var logWin = new PantallaIngreso();
+            logWin.Show();
+            this.Visible = false;
         }
     }
 }

@@ -12,8 +12,8 @@ namespace TabletUI
 {
     public partial class SelectLine : Form
     {
-        string codigo;
-        public SelectLine(string codigo)
+        int codigo;
+        public SelectLine(int codigo)
         {
             this.codigo = codigo;
             InitializeComponent();

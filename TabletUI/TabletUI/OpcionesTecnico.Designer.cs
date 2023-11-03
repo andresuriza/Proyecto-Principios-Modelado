@@ -31,11 +31,13 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(415, 144);
+            button1.Location = new Point(413, 195);
             button1.Name = "button1";
             button1.Size = new Size(311, 97);
             button1.TabIndex = 0;
@@ -63,11 +65,32 @@
             button3.UseVisualStyleBackColor = true;
             button3.MouseClick += button3_MouseClick;
             // 
+            // button4
+            // 
+            button4.Location = new Point(66, 48);
+            button4.Name = "button4";
+            button4.Size = new Size(182, 52);
+            button4.TabIndex = 3;
+            button4.Text = "Salir";
+            button4.UseVisualStyleBackColor = true;
+            button4.MouseClick += button4_MouseClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(450, 64);
+            label1.Name = "label1";
+            label1.Size = new Size(250, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Hola técnico, seleccione una opción:";
+            // 
             // OpcionesTecnico
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
+            Controls.Add(label1);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -75,6 +98,7 @@
             Name = "OpcionesTecnico";
             Text = "OpcionesTecnico";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -82,5 +106,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button4;
+        private Label label1;
     }
 }

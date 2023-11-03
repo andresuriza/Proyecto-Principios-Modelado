@@ -28,22 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
             button1 = new Button();
             label1 = new Label();
+            listBox1 = new ListBox();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Items.AddRange(new object[] { "2021001", "2021002" });
-            listBox1.Location = new Point(120, 132);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(907, 524);
-            listBox1.TabIndex = 3;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
-            listBox1.MouseDoubleClick += listBox1_MouseDoubleClick;
             // 
             // button1
             // 
@@ -64,16 +52,25 @@
             label1.TabIndex = 5;
             label1.Text = "Lista de empleados en línea de producción:\r\n";
             // 
-            // GestionarTecnico
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(71, 155);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(1037, 464);
+            listBox1.TabIndex = 6;
+            // 
+            // ListaMiembros
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
+            Controls.Add(listBox1);
             Controls.Add(label1);
             Controls.Add(button1);
-            Controls.Add(listBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "GestionarTecnico";
+            Name = "ListaMiembros";
             Text = "GestionarTecnico";
             Load += GestionarTecnico_Load;
             ResumeLayout(false);
@@ -81,8 +78,8 @@
         }
 
         #endregion
-        private ListBox listBox1;
         private Button button1;
         private Label label1;
+        private ListBox listBox1;
     }
 }

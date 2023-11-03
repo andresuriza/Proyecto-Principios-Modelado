@@ -28,44 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem("Lote1");
-            ListViewItem listViewItem2 = new ListViewItem("Lote2");
-            listView1 = new ListView();
-            d = new ColumnHeader();
             button1 = new Button();
+            button2 = new Button();
+            listBox1 = new ListBox();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { d });
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView1.Location = new Point(41, 71);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(539, 527);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // d
-            // 
-            d.Width = 1000;
             // 
             // button1
             // 
-            button1.Location = new Point(739, 294);
+            button1.Location = new Point(1040, 281);
             button1.Name = "button1";
-            button1.Size = new Size(300, 78);
+            button1.Size = new Size(120, 265);
             button1.TabIndex = 1;
-            button1.Text = "Crear lote";
+            button1.Text = "Nuevo lote";
             button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1042, 49);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 99);
+            button2.TabIndex = 2;
+            button2.Text = "Regresar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(12, 49);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(992, 584);
+            listBox1.TabIndex = 3;
             // 
             // OpcionesLote
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
+            Controls.Add(listBox1);
+            Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(listView1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "OpcionesLote";
             Text = "OpcionesLote";
@@ -73,9 +76,8 @@
         }
 
         #endregion
-
-        private ListView listView1;
-        private ColumnHeader d;
         private Button button1;
+        private Button button2;
+        private ListBox listBox1;
     }
 }

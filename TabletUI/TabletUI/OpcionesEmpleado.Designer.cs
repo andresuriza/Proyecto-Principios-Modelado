@@ -39,9 +39,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(444, 113);
             label1.Name = "label1";
-            label1.Size = new Size(272, 20);
+            label1.Size = new Size(259, 20);
             label1.TabIndex = 0;
-            label1.Text = "Hola, empleado: Seleccione una opción";
+            label1.Text = "Hola operario, seleccione una opción:";
             // 
             // terminarButton
             // 

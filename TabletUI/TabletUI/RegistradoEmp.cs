@@ -12,8 +12,8 @@ namespace TabletUI
 {
     public partial class RegistradoEmp : Form
     {
-        string codigo;
-        public RegistradoEmp(string  codigo)
+        int codigo;
+        public RegistradoEmp(int codigo)
         {
             this.codigo = codigo;
             InitializeComponent();
@@ -21,20 +21,20 @@ namespace TabletUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (codigo == "empleado")
+            if (codigo == 1)
             {
                 var opEmpleado = new OpcionesEmpleado();
                 opEmpleado.Show();
             }
 
-            else if (codigo == "supervisor") {
-                var opSupervisor = new OpcionesSupervisor();
+            else if (codigo == 2) {
+                var opSupervisor = new OpcionesSupervisor(codigo);
                 opSupervisor.Show();
             }
 
-            else if (codigo == "tecnico")
+            else if (codigo == 3)
             {
-                var opTecnico = new OpcionesTecnico();
+                var opTecnico = new OpcionesTecnico(codigo);
                 opTecnico.Show();
             }
 

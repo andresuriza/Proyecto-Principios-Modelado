@@ -28,27 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
             label1 = new Label();
             button1 = new Button();
+            estadoButton = new Button();
+            estadoLabel = new Label();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(204, 206);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(761, 450);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(415, 156);
+            label1.Location = new Point(315, 220);
             label1.Name = "label1";
-            label1.Size = new Size(287, 20);
+            label1.Size = new Size(406, 20);
             label1.TabIndex = 1;
-            label1.Text = "Lista de máquinas en línea de producción:";
+            label1.Text = "El estado actual de la máquina en la línea de producción es:";
             // 
             // button1
             // 
@@ -60,14 +53,35 @@
             button1.UseVisualStyleBackColor = true;
             button1.MouseClick += button1_MouseClick;
             // 
+            // estadoButton
+            // 
+            estadoButton.Location = new Point(445, 485);
+            estadoButton.Name = "estadoButton";
+            estadoButton.Size = new Size(276, 81);
+            estadoButton.TabIndex = 3;
+            estadoButton.Text = "Marcar fallo";
+            estadoButton.UseVisualStyleBackColor = true;
+            estadoButton.MouseClick += estadoButton_MouseClick;
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            estadoLabel.Location = new Point(732, 220);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new Size(99, 20);
+            estadoLabel.TabIndex = 4;
+            estadoLabel.Text = "Funcionando";
+            // 
             // ReporteMaquinaria
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1172, 691);
+            Controls.Add(estadoLabel);
+            Controls.Add(estadoButton);
             Controls.Add(button1);
             Controls.Add(label1);
-            Controls.Add(listView1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ReporteMaquinaria";
             Text = "Form1";
@@ -76,9 +90,9 @@
         }
 
         #endregion
-
-        private ListView listView1;
         private Label label1;
         private Button button1;
+        private Button estadoButton;
+        private Label estadoLabel;
     }
 }
