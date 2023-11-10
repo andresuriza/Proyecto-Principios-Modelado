@@ -31,7 +31,7 @@
             // Logica para break
         }
 
-    
+
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             var logWin = new PantallaIngreso();

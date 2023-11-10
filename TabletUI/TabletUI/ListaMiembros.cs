@@ -13,7 +13,7 @@ namespace TabletUI
         UsuarioPorLineaController usrPerLinea = new UsuarioPorLineaController();
         public ListaMiembros(int codigo, int lineaId)
         {
-            
+
             this.codigo = codigo;
             this.lineaId = lineaId;
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace TabletUI
 
         private void GetMiembros()
         {
- 
+
             foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
                 Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
@@ -67,7 +67,7 @@ namespace TabletUI
                         listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2 + " (Tecnico)");
                     }
                 }
-     
+
             }
         }
 

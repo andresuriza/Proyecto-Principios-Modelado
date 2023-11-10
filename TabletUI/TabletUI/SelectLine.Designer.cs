@@ -48,234 +48,249 @@
             linea18 = new Button();
             linea19 = new Button();
             linea20 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // linea1
             // 
-            linea1.Location = new Point(66, 69);
+            linea1.Location = new Point(122, 90);
             linea1.Margin = new Padding(3, 4, 3, 4);
-            linea1.Name = "button1";
-            linea1.Size = new Size(205, 128);
+            linea1.Name = "linea1";
+            linea1.Size = new Size(211, 128);
             linea1.TabIndex = 0;
             linea1.Text = "1";
             linea1.UseVisualStyleBackColor = true;
             linea1.Click += button_Click;
             // 
-            // button2
+            // linea2
             // 
-            linea2.Location = new Point(324, 69);
+            linea2.Location = new Point(380, 90);
             linea2.Margin = new Padding(3, 4, 3, 4);
-            linea2.Name = "button2";
-            linea2.Size = new Size(205, 128);
+            linea2.Name = "linea2";
+            linea2.Size = new Size(211, 128);
             linea2.TabIndex = 1;
             linea2.Text = "2";
             linea2.UseVisualStyleBackColor = true;
             linea2.Click += button_Click;
             // 
-            // button3
+            // linea3
             // 
-            linea3.Location = new Point(589, 69);
+            linea3.Location = new Point(645, 90);
             linea3.Margin = new Padding(3, 4, 3, 4);
-            linea3.Name = "button3";
-            linea3.Size = new Size(205, 128);
+            linea3.Name = "linea3";
+            linea3.Size = new Size(211, 128);
             linea3.TabIndex = 2;
             linea3.Text = "3";
             linea3.UseVisualStyleBackColor = true;
             linea3.Click += button_Click;
             // 
-            // button4
+            // linea4
             // 
-            linea4.Location = new Point(861, 69);
+            linea4.Location = new Point(917, 90);
             linea4.Margin = new Padding(3, 4, 3, 4);
-            linea4.Name = "button4";
-            linea4.Size = new Size(205, 128);
+            linea4.Name = "linea4";
+            linea4.Size = new Size(211, 128);
             linea4.TabIndex = 3;
             linea4.Text = "4";
             linea4.UseVisualStyleBackColor = true;
             linea4.Click += button_Click;
             // 
-            // button5
+            // linea5
             // 
-            linea5.Location = new Point(66, 230);
+            linea5.Location = new Point(122, 251);
             linea5.Margin = new Padding(3, 4, 3, 4);
-            linea5.Name = "button5";
-            linea5.Size = new Size(205, 128);
+            linea5.Name = "linea5";
+            linea5.Size = new Size(211, 128);
             linea5.TabIndex = 4;
             linea5.Text = "5";
             linea5.UseVisualStyleBackColor = true;
             linea5.Click += button_Click;
             // 
-            // button6
+            // linea6
             // 
-            linea6.Location = new Point(324, 230);
+            linea6.Location = new Point(380, 251);
             linea6.Margin = new Padding(3, 4, 3, 4);
-            linea6.Name = "button6";
-            linea6.Size = new Size(205, 128);
+            linea6.Name = "linea6";
+            linea6.Size = new Size(211, 128);
             linea6.TabIndex = 5;
             linea6.Text = "6";
             linea6.UseVisualStyleBackColor = true;
             linea6.Click += button_Click;
             // 
-            // button7
+            // linea7
             // 
-            linea7.Location = new Point(589, 230);
+            linea7.Location = new Point(645, 251);
             linea7.Margin = new Padding(3, 4, 3, 4);
-            linea7.Name = "button7";
-            linea7.Size = new Size(205, 128);
+            linea7.Name = "linea7";
+            linea7.Size = new Size(211, 128);
             linea7.TabIndex = 6;
             linea7.Text = "7";
             linea7.UseVisualStyleBackColor = true;
             linea7.Click += button_Click;
             // 
-            // button8
+            // linea8
             // 
-            linea8.Location = new Point(861, 230);
+            linea8.Location = new Point(917, 251);
             linea8.Margin = new Padding(3, 4, 3, 4);
-            linea8.Name = "button8";
-            linea8.Size = new Size(205, 128);
+            linea8.Name = "linea8";
+            linea8.Size = new Size(211, 128);
             linea8.TabIndex = 7;
             linea8.Text = "8";
             linea8.UseVisualStyleBackColor = true;
             linea8.Click += button_Click;
             // 
-            // button9
+            // linea9
             // 
-            linea9.Location = new Point(66, 422);
+            linea9.Location = new Point(122, 423);
             linea9.Margin = new Padding(3, 4, 3, 4);
-            linea9.Name = "button9";
-            linea9.Size = new Size(205, 128);
+            linea9.Name = "linea9";
+            linea9.Size = new Size(211, 128);
             linea9.TabIndex = 8;
             linea9.Text = "9";
             linea9.UseVisualStyleBackColor = true;
             linea9.Click += button_Click;
             // 
-            // button10
+            // linea10
             // 
-            linea10.Location = new Point(324, 422);
+            linea10.Location = new Point(380, 423);
             linea10.Margin = new Padding(3, 4, 3, 4);
-            linea10.Name = "button10";
-            linea10.Size = new Size(205, 128);
+            linea10.Name = "linea10";
+            linea10.Size = new Size(211, 128);
             linea10.TabIndex = 9;
             linea10.Text = "10";
             linea10.UseVisualStyleBackColor = true;
             linea10.Click += button_Click;
             // 
-            // button11
+            // linea11
             // 
-            linea11.Location = new Point(589, 422);
+            linea11.Location = new Point(645, 423);
             linea11.Margin = new Padding(3, 4, 3, 4);
-            linea11.Name = "button11";
-            linea11.Size = new Size(205, 128);
+            linea11.Name = "linea11";
+            linea11.Size = new Size(211, 128);
             linea11.TabIndex = 10;
             linea11.Text = "11";
             linea11.UseVisualStyleBackColor = true;
             linea11.Click += button_Click;
             // 
-            // button12
+            // linea12
             // 
-            linea12.Location = new Point(861, 422);
+            linea12.Location = new Point(917, 423);
             linea12.Margin = new Padding(3, 4, 3, 4);
-            linea12.Name = "button12";
-            linea12.Size = new Size(205, 128);
+            linea12.Name = "linea12";
+            linea12.Size = new Size(211, 128);
             linea12.TabIndex = 11;
             linea12.Text = "12";
             linea12.UseVisualStyleBackColor = true;
             linea12.Click += button_Click;
             // 
-            // button13
+            // linea13
             // 
-            linea13.Location = new Point(66, 596);
+            linea13.Location = new Point(122, 597);
             linea13.Margin = new Padding(3, 4, 3, 4);
-            linea13.Name = "button13";
-            linea13.Size = new Size(205, 128);
+            linea13.Name = "linea13";
+            linea13.Size = new Size(211, 128);
             linea13.TabIndex = 12;
             linea13.Text = "13";
             linea13.UseVisualStyleBackColor = true;
             linea13.Click += button_Click;
             // 
-            // button14
+            // linea14
             // 
-            linea14.Location = new Point(315, 596);
+            linea14.Location = new Point(371, 597);
             linea14.Margin = new Padding(3, 4, 3, 4);
-            linea14.Name = "button14";
-            linea14.Size = new Size(205, 128);
+            linea14.Name = "linea14";
+            linea14.Size = new Size(211, 128);
             linea14.TabIndex = 13;
             linea14.Text = "14";
             linea14.UseVisualStyleBackColor = true;
             linea14.Click += button_Click;
             // 
-            // button15
+            // linea15
             // 
-            linea15.Location = new Point(589, 596);
+            linea15.Location = new Point(645, 597);
             linea15.Margin = new Padding(3, 4, 3, 4);
-            linea15.Name = "button15";
-            linea15.Size = new Size(205, 128);
+            linea15.Name = "linea15";
+            linea15.Size = new Size(211, 128);
             linea15.TabIndex = 14;
             linea15.Text = "15";
             linea15.UseVisualStyleBackColor = true;
             linea15.Click += button_Click;
             // 
-            // button16
+            // linea16
             // 
-            linea16.Location = new Point(861, 609);
+            linea16.Location = new Point(917, 610);
             linea16.Margin = new Padding(3, 4, 3, 4);
-            linea16.Name = "button16";
-            linea16.Size = new Size(205, 128);
+            linea16.Name = "linea16";
+            linea16.Size = new Size(211, 128);
             linea16.TabIndex = 15;
             linea16.Text = "16";
             linea16.UseVisualStyleBackColor = true;
             linea16.Click += button_Click;
             // 
-            // button17
+            // linea17
             // 
-            linea17.Location = new Point(66, 789);
+            linea17.Location = new Point(122, 790);
             linea17.Margin = new Padding(3, 4, 3, 4);
-            linea17.Name = "button17";
-            linea17.Size = new Size(205, 128);
+            linea17.Name = "linea17";
+            linea17.Size = new Size(211, 128);
             linea17.TabIndex = 16;
             linea17.Text = "17";
             linea17.UseVisualStyleBackColor = true;
             linea17.Click += button_Click;
             // 
-            // button18
+            // linea18
             // 
-            linea18.Location = new Point(324, 789);
+            linea18.Location = new Point(380, 790);
             linea18.Margin = new Padding(3, 4, 3, 4);
-            linea18.Name = "button18";
-            linea18.Size = new Size(205, 128);
+            linea18.Name = "linea18";
+            linea18.Size = new Size(211, 128);
             linea18.TabIndex = 17;
             linea18.Text = "18";
             linea18.UseVisualStyleBackColor = true;
             linea18.Click += button_Click;
             // 
-            // button19
+            // linea19
             // 
-            linea19.Location = new Point(589, 789);
+            linea19.Location = new Point(645, 790);
             linea19.Margin = new Padding(3, 4, 3, 4);
-            linea19.Name = "button19";
-            linea19.Size = new Size(205, 128);
+            linea19.Name = "linea19";
+            linea19.Size = new Size(211, 128);
             linea19.TabIndex = 18;
             linea19.Text = "19";
             linea19.UseVisualStyleBackColor = true;
             linea19.Click += button_Click;
             // 
-            // button20
+            // linea20
             // 
-            linea20.Location = new Point(861, 789);
+            linea20.Location = new Point(917, 790);
             linea20.Margin = new Padding(3, 4, 3, 4);
-            linea20.Name = "button20";
-            linea20.Size = new Size(205, 128);
+            linea20.Name = "linea20";
+            linea20.Size = new Size(211, 128);
             linea20.TabIndex = 19;
             linea20.Text = "20";
             linea20.UseVisualStyleBackColor = true;
             linea20.Click += button_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Image = Properties.Resources.header;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1280, 83);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // SelectLine
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1172, 691);
+            ClientSize = new Size(1262, 673);
+            Controls.Add(pictureBox1);
             Controls.Add(linea20);
             Controls.Add(linea19);
             Controls.Add(linea18);
@@ -301,7 +316,9 @@
             Name = "SelectLine";
             Text = "SelectLine";
             Load += SelectLine_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -325,5 +342,6 @@
         private Button linea18;
         private Button linea19;
         private Button linea20;
+        private PictureBox pictureBox1;
     }
 }

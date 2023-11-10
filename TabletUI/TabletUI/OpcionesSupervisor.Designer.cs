@@ -33,13 +33,17 @@
             button4 = new Button();
             button1 = new Button();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button2
             // 
-            button2.Location = new Point(362, 164);
+            button2.Location = new Point(510, 300);
             button2.Name = "button2";
-            button2.Size = new Size(456, 166);
+            button2.Size = new Size(248, 114);
             button2.TabIndex = 1;
             button2.Text = "Ver lista de miembros";
             button2.UseVisualStyleBackColor = true;
@@ -47,9 +51,9 @@
             // 
             // button3
             // 
-            button3.Location = new Point(92, 427);
+            button3.Location = new Point(207, 300);
             button3.Name = "button3";
-            button3.Size = new Size(456, 166);
+            button3.Size = new Size(248, 114);
             button3.TabIndex = 2;
             button3.Text = "Opciones de lote";
             button3.UseVisualStyleBackColor = true;
@@ -57,9 +61,9 @@
             // 
             // button4
             // 
-            button4.Location = new Point(619, 427);
+            button4.Location = new Point(817, 300);
             button4.Name = "button4";
-            button4.Size = new Size(456, 166);
+            button4.Size = new Size(248, 114);
             button4.TabIndex = 3;
             button4.Text = "Break general";
             button4.UseVisualStyleBackColor = true;
@@ -67,9 +71,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(42, 59);
+            button1.Location = new Point(1067, 560);
             button1.Name = "button1";
-            button1.Size = new Size(165, 58);
+            button1.Size = new Size(164, 58);
             button1.TabIndex = 4;
             button1.Text = "Salir";
             button1.UseVisualStyleBackColor = true;
@@ -78,17 +82,41 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(452, 78);
+            label1.Location = new Point(499, 191);
             label1.Name = "label1";
             label1.Size = new Size(269, 20);
             label1.TabIndex = 5;
             label1.Text = "Hola supervisor, seleccione una opción:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Image = Properties.Resources.header;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1280, 83);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox2.Image = Properties.Resources.bottom_bar;
+            pictureBox2.Location = new Point(-9, 636);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1280, 37);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 24;
+            pictureBox2.TabStop = false;
+            // 
             // OpcionesSupervisor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1172, 691);
+            ClientSize = new Size(1262, 673);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(button4);
@@ -97,6 +125,8 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "OpcionesSupervisor";
             Text = "OpcionesSupervisor";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -107,5 +137,7 @@
         private Button button4;
         private Button button1;
         private Label label1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

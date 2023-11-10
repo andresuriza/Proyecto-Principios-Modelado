@@ -34,13 +34,28 @@ namespace TabletUI
         {
             int linea = Int32.Parse((sender as Button).Text);
             string cedula = uc.GetUsuarioByCodigo(codigo).Cedula;
-            usrPerLine.AddUsuarioEnLinea(cedula, linea, new DateOnly(2023, 
+            usrPerLine.AddUsuarioEnLinea(cedula, linea, new DateOnly(2023,
                 11, 03), new TimeOnly(9, 0), new TimeOnly(17, 0));
-            
+
             //usrPerLine.DeleteUsuarioEnLinea("118891234", 1);
             var registroWin = new RegistradoEmp(usrTipo, linea);
-            registroWin.Show();   
+            registroWin.Show();
             this.Visible = false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

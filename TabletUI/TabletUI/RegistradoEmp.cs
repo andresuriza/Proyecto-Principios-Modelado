@@ -31,7 +31,8 @@ namespace TabletUI
                 opEmpleado.Show();
             }
 
-            else if (codigo == 2) {
+            else if (codigo == 2)
+            {
                 var opSupervisor = new OpcionesSupervisor(codigo, linea);
                 opSupervisor.Show();
             }

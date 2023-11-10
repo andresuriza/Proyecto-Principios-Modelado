@@ -19,7 +19,7 @@ namespace TabletUI
             this.codigo = codigo;
             this.linea = linea;
             InitializeComponent();
-            
+
         }
 
         private void button2_MouseClick(object sender, MouseEventArgs e)

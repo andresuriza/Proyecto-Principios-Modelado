@@ -9,6 +9,7 @@ namespace TabletUI
         private string codigo;
         private int tipo;
         UsuarioController uc = new UsuarioController();
+
         public PantallaIngreso()
         {
             InitializeComponent();
