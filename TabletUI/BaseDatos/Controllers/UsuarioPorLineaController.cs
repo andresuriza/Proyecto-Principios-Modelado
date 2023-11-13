@@ -1,6 +1,7 @@
 ﻿using BaseDatos.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,14 @@ public class UsuarioPorLineaController
     {
         try
         {
+            for (int id = 1; id < 21; id++) // Elimina otras instancias del usuario en otras lineas
+            {
+                DeleteUsuarioEnLinea(cedula, id);
+                context.SaveChanges();
+            }
+
             UsuarioPorLinea userEnLinea = context.UsuarioPorLineas.Find(cedula, lineaId);
+
             if (userEnLinea == null)
             {
                 userEnLinea = new UsuarioPorLinea()

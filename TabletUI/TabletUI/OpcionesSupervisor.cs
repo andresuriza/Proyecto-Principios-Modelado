@@ -21,7 +21,7 @@
 
         private void button3_MouseClick(object sender, MouseEventArgs e)
         {
-            var loteWin = new OpcionesLote(codigo);
+            var loteWin = new OpcionesLote(codigo, linea);
             loteWin.Show();
             this.Visible = false;
         }

@@ -1899,24 +1899,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\skyga\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\andres\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
+      "projectUniqueName": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
       "projectName": "TabletUI",
-      "projectPath": "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
-      "packagesPath": "C:\\Users\\skyga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\obj\\",
+      "projectPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
+      "packagesPath": "C:\\Users\\andres\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\skyga\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1930,8 +1925,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj": {
-              "projectPath": "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj"
+            "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj": {
+              "projectPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj"
             }
           }
         }

@@ -1,4 +1,6 @@
 ﻿using BaseDatos.Controllers;
+using BaseDatos.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,11 +36,15 @@ namespace TabletUI
         {
             int linea = Int32.Parse((sender as Button).Text);
             string cedula = uc.GetUsuarioByCodigo(codigo).Cedula;
-            usrPerLine.AddUsuarioEnLinea(cedula, linea, new DateOnly(2023,
-                11, 03), new TimeOnly(9, 0), new TimeOnly(17, 0));
 
-            //usrPerLine.DeleteUsuarioEnLinea("118891234", 1);
-            var registroWin = new RegistradoEmp(usrTipo, linea);
+            if (usrTipo == 3) { // Si tecnico cambia, se vuelve operario de nuevo
+                uc.UpdateTipo(cedula, 1);
+            }
+            
+            usrPerLine.AddUsuarioEnLinea(cedula, linea, new DateOnly(DateTime.Now.Year,
+                DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute), new TimeOnly(0, 0));
+
+            var registroWin = new RegistradoEmp(uc.GetUsuarioType(codigo), linea);
             registroWin.Show();
             this.Visible = false;
         }

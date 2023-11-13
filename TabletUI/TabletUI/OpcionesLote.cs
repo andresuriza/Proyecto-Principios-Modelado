@@ -1,4 +1,5 @@
 ﻿using BaseDatos.Controllers;
+using BaseDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,22 +15,29 @@ namespace TabletUI
     public partial class OpcionesLote : Form
     {
         int codigo;
+        int linea;
+
+        LotePorLineaController lotControllerLinea = new LotePorLineaController();
         LoteController lotController = new LoteController();
-        public OpcionesLote(int codigo)
+        public OpcionesLote(int codigo, int linea)
         {
             this.codigo = codigo;
+            this.linea = linea;
             InitializeComponent();
             GetLotes();
         }
 
         private void GetLotes()
         {
-            foreach (var lote in lotController.GetAllLotes())
+            foreach (var lote in lotControllerLinea.GetAllLotesPorLineas())
             {
-
-                listBox1.Items.Add("Id: " + lote.Id + " Descripcion: " + lote.Descripcion + " ProductoId: " + lote.Productoid
-                    + " Cant.Esperada: " + lote.Cantidadrequerida + " Cant.Obtenida de momento: " + lote.Cantidadobtenida);
-
+                Lote loteEspecifico = lotController.GetLoteById(int.Parse(lote.Loteid));
+                //if (lote.Lineaid == 1)
+                //{
+                    listBox1.Items.Add("Id: " + loteEspecifico.Id + " Descripcion: " + loteEspecifico.Descripcion + 
+                        " ProductoId: " + loteEspecifico.Productoid + " Cant.Esperada: " + loteEspecifico.Cantidadrequerida + 
+                        " Cant.Obtenida de momento: " + loteEspecifico.Cantidadobtenida);
+               // }
             }
             /*
             "Id: " + listaLotes[i].Id +

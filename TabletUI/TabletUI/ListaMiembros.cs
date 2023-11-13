@@ -58,38 +58,34 @@ namespace TabletUI
 
                 if (empleadoLista.Lineaid == lineaId)
                 {
-                    if (empleado.Tipousuarioid == 1)
+                    if (empleado.Tipousuarioid == 1) // Si es operario
                     {
-                        listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2);
+                        listBox1.Items.Add(empleado.Cedula + " " + empleado.Nombre + " " + empleado.Apellido1 + " " +
+                            empleado.Apellido2);
                     }
-                    else if (empleado.Tipousuarioid == 3)
+                    else if (empleado.Tipousuarioid == 3) // Si es tecnico
                     {
-                        listBox1.Items.Add(empleado.Nombre + " " + empleado.Apellido1 + " " + empleado.Apellido2 + " (Tecnico)");
+                        listBox1.Items.Add(empleado.Cedula + " " + empleado.Nombre + " " + empleado.Apellido1 + " " +
+                            empleado.Apellido2 + " (Tecnico)");
                     }
                 }
-
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void removeTecnicos()
         {
-
-        }
-
-        /*
-        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            listBox1.SelectedItem = "Técnico actual";
-        }
-
-        private void GestionarTecnico_Load(object sender, EventArgs e)
-        {
-
-        }
-        */
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
+            {
+                Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
+               
+                if (empleado.Tipousuarioid == 3) // Si es tecnico
+                {
+                    if (empleadoLista.Lineaid == lineaId)
+                    {
+                        uc.UpdateTipo(empleadoLista.Cedula, 1);
+                    }
+                }
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -106,6 +102,21 @@ namespace TabletUI
             }
 
             this.Visible = false;
+        }
+
+        private void listBox1_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            if (codigo == 2) // Solamente si es supervisor
+            {
+                int index = this.listBox1.IndexFromPoint(e.Location);
+                if (index != System.Windows.Forms.ListBox.NoMatches)
+                {
+                    removeTecnicos();
+                    uc.UpdateTipo(listBox1.Items[index].ToString().Substring(0, 9), 3);
+                    listBox1.Items.Clear();
+                    GetMiembros();
+                }
+            }
         }
     }
 }

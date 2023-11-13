@@ -1877,24 +1877,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\skyga\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\andres\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
+      "projectUniqueName": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
       "projectName": "BaseDatos",
-      "projectPath": "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
-      "packagesPath": "C:\\Users\\skyga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skyga\\Documents\\GitHub\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\obj\\",
+      "projectPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
+      "packagesPath": "C:\\Users\\andres\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\skyga\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

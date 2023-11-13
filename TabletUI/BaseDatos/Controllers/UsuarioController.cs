@@ -113,6 +113,7 @@ public class UsuarioController
             return "Ocurrio una excepcion";
         }    
     }
+
     public string UpdateUsuario(string cedula, string nombre, string ap1,
                 string ap2, string codigo, int tipoUsuario)
     {
@@ -142,6 +143,33 @@ public class UsuarioController
             return "Ocurrio una excepcion"; 
         }
     }
+
+    public string UpdateTipo(string cedula, int tipoUsuario)
+    {
+        try
+        {
+            Usuario user = context.Usuarios.Find(cedula);
+
+            if (user == null)
+            {
+                return "Usuario no existe. No lo puede actualizar si no existe";
+            }
+            else
+            {
+                user.Cedula = cedula;
+                user.Tipousuarioid = tipoUsuario;
+                context.Entry(user).State = EntityState.Modified;
+                context.SaveChanges();
+                return "Usuario actualizado correctamente";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            return "Ocurrio una excepcion";
+        }
+    }
+
     public string DeleteUsuario(string cedula)
     {
         try
