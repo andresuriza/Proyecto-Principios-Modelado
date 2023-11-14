@@ -19,7 +19,9 @@ namespace TabletUI
         int usrTipo;
         string codigo;
         UsuarioPorLineaController usrPerLine = new UsuarioPorLineaController();
+        LotePorLineaController lotControllerLinea = new LotePorLineaController();
         UsuarioController uc = new UsuarioController();
+        LoteController lotController = new LoteController();
         public SelectLine(int usrTipo, string codigo)
         {
             this.usrTipo = usrTipo;
@@ -43,6 +45,12 @@ namespace TabletUI
             
             usrPerLine.AddUsuarioEnLinea(cedula, linea, new DateOnly(DateTime.Now.Year,
                 DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute), new TimeOnly(0, 0));
+
+            Debug.WriteLine(lotControllerLinea.AddLotePorLinea("202310001", 1, new DateOnly(2000,1, 1), new TimeOnly(0, 0),
+                new TimeOnly(13, 0)));
+
+            //lotControllerLinea.AddLotePorLinea("202310002", 2, new DateOnly(DateTime.Now.Year,
+            //    DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute), new TimeOnly(13, 0));
 
             var registroWin = new RegistradoEmp(uc.GetUsuarioType(codigo), linea);
             registroWin.Show();

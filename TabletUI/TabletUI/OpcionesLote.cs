@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,21 +32,17 @@ namespace TabletUI
         {
             foreach (var lote in lotControllerLinea.GetAllLotesPorLineas())
             {
-                Lote loteEspecifico = lotController.GetLoteById(int.Parse(lote.Loteid));
-                //if (lote.Lineaid == 1)
-                //{
+                Debug.WriteLine("Existo");
+                /*
+                Lote loteEspecifico = lotController.GetLoteById(lote.Loteid);
+                //if (lote.Lineaid == linea)
+               // {
                     listBox1.Items.Add("Id: " + loteEspecifico.Id + " Descripcion: " + loteEspecifico.Descripcion + 
                         " ProductoId: " + loteEspecifico.Productoid + " Cant.Esperada: " + loteEspecifico.Cantidadrequerida + 
                         " Cant.Obtenida de momento: " + loteEspecifico.Cantidadobtenida);
                // }
+                */
             }
-            /*
-            "Id: " + listaLotes[i].Id +
-                                " Descripcion: " + listaLotes[i].Descripcion +
-                                " ProductoId: " + listaLotes[i].Productoid +
-                                " Cant.Esperada: " + listaLotes[i].Cantidadrequerida +
-                                " Cant.Obtenida de momento: " + listaLotes[i].Cantidadobtenida)
-            */
         }
 
         private void button2_Click(object sender, EventArgs e)

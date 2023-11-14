@@ -26,7 +26,7 @@ public class LoteController
         }
     }
 
-    public Lote GetLoteById(int id)
+    public Lote GetLoteById(string id)
     {
         try
         {
@@ -59,7 +59,7 @@ public class LoteController
                     Cantidadrequerida = cantidadRequerida,
                     Cantidadobtenida = cantidadObtenida
                 };
-                context.Lotes.Add(lote);
+                context.Lotes.Add(lote2);
                 context.SaveChanges();
                 return "Lote agregado correctamente \n";
             }
