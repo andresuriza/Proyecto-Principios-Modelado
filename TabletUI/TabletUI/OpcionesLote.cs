@@ -1,15 +1,6 @@
 ﻿using BaseDatos.Controllers;
 using BaseDatos.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TabletUI
 {
@@ -18,6 +9,7 @@ namespace TabletUI
         int codigo;
         int linea;
 
+
         LotePorLineaController lotControllerLinea = new LotePorLineaController();
         LoteController lotController = new LoteController();
         public OpcionesLote(int codigo, int linea)
@@ -25,6 +17,7 @@ namespace TabletUI
             this.codigo = codigo;
             this.linea = linea;
             InitializeComponent();
+
             GetLotes();
         }
 
@@ -71,15 +64,48 @@ namespace TabletUI
             int index = this.listBox1.IndexFromPoint(e.Location);
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
+                
+
                 int Start = listBox1.Items[index].ToString().IndexOf("Id: ", 0) + "Id: ".Length;
                 int End = listBox1.Items[index].ToString().IndexOf(" D", Start);
 
                 string idToDelete = listBox1.Items[index].ToString().Substring(Start, End - Start);
+                Lote loteEspecifico = lotController.GetLoteById(idToDelete);
 
-                lotControllerLinea.DeleteLotePorLinea(idToDelete, linea);
+                //lotControllerLinea.DeleteLotePorLinea(idToDelete, linea);
+                //lotController.DeleteLote(idToDelete);
+                // Modificar e indicar que ya se terminó
                 listBox1.Items.Clear();
                 GetLotes();
+
+                //-------------------------------------------------------------------------------------------
+
+                TimeOnly pastTime = lotControllerLinea.GetLoteTime(idToDelete);
+
+                TimeOnly currTime = new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute);
+
+                TimeSpan elapsedTime = currTime - pastTime;
+
+                string[] authors;
+
+                authors = new string[] {"Id: " + idToDelete, "Descripcion: " + loteEspecifico.Descripcion, 
+                    "ProductoId: " + loteEspecifico.Productoid, "Cant.Esperada: " + loteEspecifico.Cantidadrequerida,
+                    "Cant.Obtenida de momento: " + loteEspecifico.Cantidadrequerida, "Inicio: " + pastTime, 
+                    "Tiempo de setup: " + elapsedTime * 0.6, "Tiempo de envasado: " + elapsedTime * 0.1, 
+                    "Tiempo de etiquetado: " + elapsedTime * 0.05, "Tiempo de sellado: " + elapsedTime * 0.05, 
+                    "Tiempo de finalización: " + elapsedTime * 0.2, "Fin: " + currTime, 
+                    "------------------------------------------"};
+
+                File.AppendAllLines("Lotes.txt", authors);
+                string readText = File.ReadAllText("Lotes.txt");
+                Debug.WriteLine(readText);
             }
         }
-    }
+
+        private void OpcionesLote_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Estadisticas.Test();
+        }
+
+    }     
 }

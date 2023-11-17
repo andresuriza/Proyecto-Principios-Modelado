@@ -1,0 +1,26 @@
+Id: 202311001
+Descripcion: Lote #1
+ProductoId: 9
+Cant.Esperada: 40
+Cant.Obtenida de momento: 40
+Inicio: 9:00 AM
+Tiempo de setup: 04:35:24
+Tiempo de envasado: 00:45:54
+Tiempo de etiquetado: 00:22:57
+Tiempo de sellado: 00:22:57
+Tiempo de finalización: 01:31:48
+Fin: 4:39 PM
+------------------------------------------
+Id: 202311002
+Descripcion: Lote #2
+ProductoId: 8
+Cant.Esperada: 70
+Cant.Obtenida de momento: 70
+Inicio: 9:00 AM
+Tiempo de setup: 04:35:24
+Tiempo de envasado: 00:45:54
+Tiempo de etiquetado: 00:22:57
+Tiempo de sellado: 00:22:57
+Tiempo de finalización: 01:31:48
+Fin: 4:39 PM
+------------------------------------------

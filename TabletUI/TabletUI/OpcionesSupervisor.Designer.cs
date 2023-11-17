@@ -125,6 +125,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "OpcionesSupervisor";
             Text = "OpcionesSupervisor";
+            FormClosed += OpcionesSupervisor_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

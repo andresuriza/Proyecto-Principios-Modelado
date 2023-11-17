@@ -32,9 +32,9 @@ public class LotePorLineaController
         try
         {
             LotePorLinea lotePorLinea = context.LotePorLineas.FirstOrDefault(u => u.Loteid == idLote);
-            LotePorLinea lotePorLinea3 = context.LotePorLineas.FirstOrDefault(u => u.Lineaid == idLinea);
+            //LotePorLinea lotePorLinea3 = context.LotePorLineas.FirstOrDefault(u => u.Lineaid == idLinea);
 
-            if (lotePorLinea != null && lotePorLinea3 == null)
+            if (lotePorLinea != null)
             {
                 return "El lote ya se asigno a una linea. No puede asignar el lote dos veces a la misma linea";
             }
@@ -88,6 +88,12 @@ public class LotePorLineaController
             return "Ocurrio una excepcion al intentar borrar la asignacion de un lote en una linea";
         }
     }
+
+    public TimeOnly GetLoteTime(string idLote)
+    {
+        return context.LotePorLineas.FirstOrDefault(u => u.Loteid == idLote).Horainicio;
+    }
+
     public string DeleteLotePorLinea(string idLote, int idLinea)
     {
         try

@@ -35,8 +35,14 @@
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             var logWin = new PantallaIngreso();
+            //var logWin = new SelectLine(2, "1237");
             logWin.Show();
             this.Visible = false;
+        }
+
+        private void OpcionesSupervisor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Estadisticas.Test();
         }
     }
 }

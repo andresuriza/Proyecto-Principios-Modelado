@@ -14,8 +14,8 @@ public class Program
         UsuarioPorLineaController usrPerLine = new UsuarioPorLineaController();
 
         // ESTOS METODOS AGARRAN LOS DATOS DESDE LA BASE DE DATOS
-        //usrPerLine.AddUsuarioEnLinea("118891234", 1, new DateOnly(2023, 11, 03), new TimeOnly(9, 0), new TimeOnly(17, 0));
-        //usrPerLine.DeleteUsuarioEnLinea("118891234", 1);
+
+
         List<Usuario> listaUsers = uc.GetAllUsuarios();
         List<Linea> listaLineas = lc.GetAllLineas();
         List<TipoUsuario> listaTiposUsuarios = tuc.GetAllTiposUsuarios();
@@ -23,11 +23,12 @@ public class Program
         List<Lote> listaLotes = loteC.GetAllLotes();
         List<UsuarioPorLinea> listaUsersPorL = usrPerLine.GetAllUsuarios();
 
-    
+
         // IMPRESION DE LOS DATOS EN CONSOLA
 
         Console.WriteLine("USUARIOS EN LA BASE DE DATOS");
-        //Console.WriteLine(res);
+        //uc.AddUsuario("123456789", "Tanenbaum", "Arias", "Alfaro", "1111", 1)
+        
         for (int i = 0; i < listaUsers.Count; i++)
         {
             Console.WriteLine("Cedula: " + listaUsers[i].Cedula +

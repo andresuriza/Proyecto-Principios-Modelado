@@ -315,6 +315,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "SelectLine";
             Text = "SelectLine";
+            FormClosed += SelectLine_FormClosed;
             Load += SelectLine_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

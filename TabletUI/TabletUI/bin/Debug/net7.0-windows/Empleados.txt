@@ -1,0 +1,8 @@
+Empleado: 118891234
+Inicio: 9:00 AM
+Actual: 1:00 PM
+Break finalizado, horas laboradas: 04:00:00
+Empleado: 118891234
+Inicio: 2:00 PM
+Actual: 5:00 PM
+Break finalizado, horas laboradas: 07:00:00

@@ -125,6 +125,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "OpcionesTecnico";
             Text = "OpcionesTecnico";
+            FormClosed += OpcionesTecnico_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

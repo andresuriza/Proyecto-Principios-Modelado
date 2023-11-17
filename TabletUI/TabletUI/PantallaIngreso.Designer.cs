@@ -117,6 +117,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "PantallaIngreso";
             Text = "PantallaIngreso";
+            FormClosed += PantallaIngreso_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

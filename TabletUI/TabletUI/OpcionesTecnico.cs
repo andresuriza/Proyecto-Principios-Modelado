@@ -50,5 +50,10 @@ namespace TabletUI
             logWin.Show();
             this.Visible = false;
         }
+
+        private void OpcionesTecnico_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

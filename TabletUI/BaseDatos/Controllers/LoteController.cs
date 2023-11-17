@@ -122,5 +122,28 @@ public class LoteController
             return "Ocurrio una excepcion \n";
         }
     }
+
+    public string DeleteLote(string id)
+    {
+        try
+        {
+            Lote lote = context.Lotes.Find(id);
+            if (lote == null)
+            {
+                return "Lote no existe. No puede borrarlo si no existe";
+            }
+            else
+            {
+                context.Lotes.Remove(lote);
+                context.SaveChanges();
+                return "Lote borrado correctamente";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString);
+            return "Ocurrio una excepcion";
+        }
+    }
 }
 

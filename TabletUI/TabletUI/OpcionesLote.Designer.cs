@@ -102,6 +102,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "OpcionesLote";
             Text = "OpcionesLote";
+            FormClosed += OpcionesLote_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

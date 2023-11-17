@@ -101,6 +101,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ListaMiembros";
             Text = "GestionarTecnico";
+            FormClosed += ListaMiembros_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

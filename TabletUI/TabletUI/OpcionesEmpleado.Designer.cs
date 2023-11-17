@@ -113,6 +113,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "OpcionesEmpleado";
             Text = "OpcionesEmpleado";
+            FormClosed += OpcionesEmpleado_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

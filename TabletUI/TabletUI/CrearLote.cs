@@ -33,8 +33,8 @@ namespace TabletUI
                 lotController.AddLote(idText.Text, descText.Text, int.Parse(productidText.Text),
                     int.Parse(cantidadText.Text), 0);
                 lotControllerLinea.AddLotePorLinea(idText.Text, linea, new DateOnly(DateTime.Now.Year,
-                    DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute),
-                    new TimeOnly(13, 0));
+                    DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(9, 0),
+                    new TimeOnly(0, 0));
                 Close();
             }
         }

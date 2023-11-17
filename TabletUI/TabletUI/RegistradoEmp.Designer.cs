@@ -91,6 +91,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "RegistradoEmp";
             Text = "RegistradoEmp";
+            FormClosed += RegistradoEmp_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

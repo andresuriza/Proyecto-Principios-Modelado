@@ -78,7 +78,7 @@ namespace TabletUI
             foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
                 Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
-               
+
                 if (empleado.Tipousuarioid == 3) // Si es tecnico
                 {
                     if (empleadoLista.Lineaid == lineaId)
@@ -118,6 +118,11 @@ namespace TabletUI
                     GetMiembros();
                 }
             }
+        }
+
+        private void ListaMiembros_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Estadisticas.Test();
         }
     }
 }

@@ -31,5 +31,10 @@ namespace TabletUI
                 errorLabel.Show();
             }
         }
+
+        private void PantallaIngreso_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Estadisticas.Test();
+        }
     }
 }

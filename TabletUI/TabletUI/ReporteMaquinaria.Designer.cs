@@ -113,6 +113,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ReporteMaquinaria";
             Text = "Form1";
+            FormClosed += ReporteMaquinaria_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
