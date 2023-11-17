@@ -65,6 +65,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(954, 444);
             listBox1.TabIndex = 3;
+            listBox1.MouseDoubleClick += listBox1_MouseDoubleClick;
             // 
             // pictureBox1
             // 

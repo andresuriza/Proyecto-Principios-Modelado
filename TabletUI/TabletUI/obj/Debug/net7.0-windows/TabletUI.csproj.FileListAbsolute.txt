@@ -34,7 +34,6 @@ C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principio
 C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.pdb
 C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.genruntimeconfig.cache
 C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\ref\TabletUI.dll
-C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.OpcionesEmpleado.resources
 C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.OpcionesSupervisor.resources
 C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.ReporteMaquinaria.resources
 C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.OpcionesLote.resources
@@ -194,3 +193,5 @@ C:\Users\skyga\Documents\GitHub\Proyecto-Principios-Modelado\TabletUI\TabletUI\o
 C:\Users\skyga\Documents\GitHub\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\ref\TabletUI.dll
 C:\Users\skyga\Documents\GitHub\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.Properties.Resources.resources
 C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.Properties.Resources.resources
+C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.CrearLote.resources
+C:\Users\andres\Documents\TEC\Principios de modelado\Proyecto\Proyecto-Principios-Modelado\TabletUI\TabletUI\obj\Debug\net7.0-windows\TabletUI.OpcionesEmpleado.resources

@@ -51,7 +51,6 @@ namespace TabletUI
 
         private void GetMiembros()
         {
-
             foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
                 Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
@@ -62,6 +61,8 @@ namespace TabletUI
                     {
                         listBox1.Items.Add(empleado.Cedula + " " + empleado.Nombre + " " + empleado.Apellido1 + " " +
                             empleado.Apellido2);
+
+                        //Debug.WriteLine(usrPerLinea.GetUsuarioTime(empleado.Cedula).ToString());
                     }
                     else if (empleado.Tipousuarioid == 3) // Si es tecnico
                     {

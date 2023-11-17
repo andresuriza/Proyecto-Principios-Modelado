@@ -14,36 +14,55 @@ namespace TabletUI
     {
         int codigo;
         int linea;
+        string cedula;
+        string tipo;
 
-        public RegistradoEmp(int codigo, int linea)
+        public RegistradoEmp(int codigo, int linea, string cedula, string tipo)
         {
+            this.cedula = cedula;
             this.codigo = codigo;
             this.linea = linea;
+            this.tipo = tipo;
+
             InitializeComponent();
+
+            if (tipo == "break")
+            {
+                label1.Text = "Se registró su break, al ingresar de nuevo se continuará su jornada";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (codigo == 1)
+            if (tipo == "break")
             {
-                // TODO: regresar a pantalla primero
-                var opEmpleado = new OpcionesEmpleado();
-                opEmpleado.Show();
+                this.Visible = false;
+                var w1 = new PantallaIngreso();
+                w1.Show();
             }
 
-            else if (codigo == 2)
+            else
             {
-                var opSupervisor = new OpcionesSupervisor(codigo, linea);
-                opSupervisor.Show();
-            }
+                if (codigo == 1)
+                {
+                    var opEmpleado = new OpcionesEmpleado(cedula);
+                    opEmpleado.Show();
+                }
 
-            else if (codigo == 3)
-            {
-                var opTecnico = new OpcionesTecnico(codigo, linea);
-                opTecnico.Show();
-            }
+                else if (codigo == 2)
+                {
+                    var opSupervisor = new OpcionesSupervisor(codigo, linea);
+                    opSupervisor.Show();
+                }
 
-            this.Visible = false;
-        }
+                else if (codigo == 3)
+                {
+                    var opTecnico = new OpcionesTecnico(codigo, linea);
+                    opTecnico.Show();
+                }
+
+                this.Visible = false;
+            }
+        }    
     }
 }

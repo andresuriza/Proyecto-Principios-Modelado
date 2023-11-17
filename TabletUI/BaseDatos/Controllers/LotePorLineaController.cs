@@ -3,6 +3,7 @@ using static System.DateOnly;
 using static System.TimeOnly;
 using System;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace BaseDatos.Controllers;
 public class LotePorLineaController
@@ -30,8 +31,10 @@ public class LotePorLineaController
     {
         try
         {
-            LotePorLinea lotePorLinea = context.LotePorLineas.Find(idLinea, idLote);
-            if(lotePorLinea != null)
+            LotePorLinea lotePorLinea = context.LotePorLineas.FirstOrDefault(u => u.Loteid == idLote);
+            LotePorLinea lotePorLinea3 = context.LotePorLineas.FirstOrDefault(u => u.Lineaid == idLinea);
+
+            if (lotePorLinea != null && lotePorLinea3 == null)
             {
                 return "El lote ya se asigno a una linea. No puede asignar el lote dos veces a la misma linea";
             }
@@ -89,14 +92,17 @@ public class LotePorLineaController
     {
         try
         {
-            LotePorLinea loteEnLinea = context.LotePorLineas.Find(idLinea, idLote);
-            if (loteEnLinea == null)
+            //var lotePorLinea3 = context.LotePorLineas.Find(idLote, idLinea);
+            var lotePorLinea = context.LotePorLineas.FirstOrDefault(u => u.Loteid == idLote);
+
+            if (lotePorLinea == null)
             {
                 return "Lote no asignado a esa linea. No lo puede borrar pues no existe esa asignacion";
             }
             else
             {
-                context.LotePorLineas.Remove(loteEnLinea);
+                context.LotePorLineas.Remove(lotePorLinea);
+        
                 context.SaveChanges();
                 return "Asignacion de lote en una linea se borro correctamente";
             }
@@ -106,7 +112,4 @@ public class LotePorLineaController
             return "Ocurrio una excepcion al borrar la asignacion de lote en una linea";
         }
     }
-
-
-
 }

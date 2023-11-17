@@ -32,16 +32,13 @@ namespace TabletUI
         {
             foreach (var lote in lotControllerLinea.GetAllLotesPorLineas())
             {
-                Debug.WriteLine("Existo");
-                /*
                 Lote loteEspecifico = lotController.GetLoteById(lote.Loteid);
-                //if (lote.Lineaid == linea)
-               // {
-                    listBox1.Items.Add("Id: " + loteEspecifico.Id + " Descripcion: " + loteEspecifico.Descripcion + 
-                        " ProductoId: " + loteEspecifico.Productoid + " Cant.Esperada: " + loteEspecifico.Cantidadrequerida + 
+                if (lote.Lineaid == linea)
+                {
+                    listBox1.Items.Add("Id: " + loteEspecifico.Id + " Descripcion: " + loteEspecifico.Descripcion +
+                        " ProductoId: " + loteEspecifico.Productoid + " Cant.Esperada: " + loteEspecifico.Cantidadrequerida +
                         " Cant.Obtenida de momento: " + loteEspecifico.Cantidadobtenida);
-               // }
-                */
+                }
             }
         }
 
@@ -49,12 +46,12 @@ namespace TabletUI
         {
             if (codigo == 2)
             {
-                var superWin = new OpcionesSupervisor(codigo, 0);
+                var superWin = new OpcionesSupervisor(codigo, linea);
                 superWin.Show();
             }
             else if (codigo == 3)
             {
-                var superWin = new OpcionesTecnico(codigo, 0);
+                var superWin = new OpcionesTecnico(codigo, linea);
                 superWin.Show();
             }
 
@@ -63,7 +60,26 @@ namespace TabletUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var window = new CrearLote(linea);
+            window.ShowDialog();
+            listBox1.Items.Clear();
+            GetLotes();
+        }
 
+        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = this.listBox1.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                int Start = listBox1.Items[index].ToString().IndexOf("Id: ", 0) + "Id: ".Length;
+                int End = listBox1.Items[index].ToString().IndexOf(" D", Start);
+
+                string idToDelete = listBox1.Items[index].ToString().Substring(Start, End - Start);
+
+                lotControllerLinea.DeleteLotePorLinea(idToDelete, linea);
+                listBox1.Items.Clear();
+                GetLotes();
+            }
         }
     }
 }

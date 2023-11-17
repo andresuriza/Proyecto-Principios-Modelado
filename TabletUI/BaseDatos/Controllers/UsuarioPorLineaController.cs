@@ -1,4 +1,5 @@
 ﻿using BaseDatos.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -16,41 +17,77 @@ public class UsuarioPorLineaController
         this.context = new MesContext();
     }
 
-    public string AddUsuarioEnLinea(string cedula, int lineaId, DateOnly fecha, 
+    public string CreateUsuarioEnLinea(UsuarioPorLinea usr, string cedula, int lineaId, DateOnly fecha, TimeOnly horaInicio,
+        TimeOnly horaFinal)
+    {
+        usr = new UsuarioPorLinea()
+        {
+            Cedula = cedula,
+            Lineaid = lineaId,
+            Fecha = fecha,
+            Horainicio = horaInicio,
+            Horafinal = horaFinal
+        };
+        context.UsuarioPorLineas.Add(usr);
+        context.SaveChanges();
+        return "Asignacion de usuario en una linea se agrego correctamente";
+    }
+
+    public string CheckUsuarioEnLinea(string cedula, int lineaId, DateOnly fecha, 
                                     TimeOnly horaInicio, TimeOnly horaFinal)
     {
         try
         {
-            for (int id = 1; id < 21; id++) // Elimina otras instancias del usuario en otras lineas
+            UsuarioPorLinea userEnLinea = context.UsuarioPorLineas.FirstOrDefault(u => u.Cedula == cedula);
+            
+            if (userEnLinea == null) // Si el usuario no existe
             {
-                DeleteUsuarioEnLinea(cedula, id);
-                context.SaveChanges();
+                return CreateUsuarioEnLinea(userEnLinea, cedula, lineaId, fecha, horaInicio, horaFinal);
             }
-
-            UsuarioPorLinea userEnLinea = context.UsuarioPorLineas.Find(cedula, lineaId);
-
-            if (userEnLinea == null)
+            else if (userEnLinea.Lineaid != lineaId) // Si el usuario ya existe en otra linea
             {
-                userEnLinea = new UsuarioPorLinea()
+                for (int id = 1; id < 21; id++) // Elimina otras instancias del usuario en otras lineas
                 {
-                    Cedula = cedula,
-                    Lineaid = lineaId,
-                    Fecha = fecha,
-                    Horainicio = horaInicio,
-                    Horafinal = horaFinal
-                };
-                context.UsuarioPorLineas.Add(userEnLinea);
-                context.SaveChanges();
-                return "Asignacion de usuario en una linea se agrego correctamente";
+                    DeleteUsuarioEnLinea(cedula, id);
+                    context.SaveChanges();
+                    CreateUsuarioEnLinea(userEnLinea, cedula, lineaId, fecha, horaInicio, horaFinal);
+                }
+                return "Asignacion de usuario en esa linea ya existia";
             }
             else
             {
                 return "Asignacion de usuario en esa linea ya existia";
             }
-        }catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             Console.WriteLine(ex.ToString());
             return "Ocurrio una excepcion al intentar agregar una asignacion de usuario en una linea";
+        }
+    }
+
+    public string UpdateUsuarioTime(string cedula, TimeOnly horaFinal)
+    {
+        try
+        {
+            var user = context.UsuarioPorLineas.FirstOrDefault(u => u.Cedula == cedula);
+
+            if (user == null)
+            {
+                return "Usuario no existe. No lo puede actualizar si no existe";
+            }
+            else
+            {
+                user.Horafinal = horaFinal;
+                context.Entry(user).State = EntityState.Modified;
+                context.SaveChanges();
+                return "Usuario actualizado correctamente";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            return "Ocurrio una excepcion";
         }
     }
 
@@ -66,6 +103,34 @@ public class UsuarioPorLineaController
             List<UsuarioPorLinea> users = null;
             return users;
         }
+    }
+
+    public int GetUsuarioLinea(string cedula)
+    {
+        try
+        {
+            var user = context.UsuarioPorLineas.FirstOrDefault(u => u.Cedula == cedula);
+
+            if (user == null)
+            {
+                return 0;
+            }
+            else
+            {
+              return user.Lineaid;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            return -1;
+        }
+        
+    }
+
+    public TimeOnly GetUsuarioTime(string cedula)
+    {
+        return context.UsuarioPorLineas.FirstOrDefault(u => u.Cedula == cedula).Horainicio;
     }
 
     public string DeleteUsuarioEnLinea(string cedula, int lineaId)

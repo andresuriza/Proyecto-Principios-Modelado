@@ -39,20 +39,15 @@ namespace TabletUI
             int linea = Int32.Parse((sender as Button).Text);
             string cedula = uc.GetUsuarioByCodigo(codigo).Cedula;
 
-            if (usrTipo == 3) { // Si tecnico cambia, se vuelve operario de nuevo
-                uc.UpdateTipo(cedula, 1);
+            if (usrTipo == 3 && usrPerLine.GetUsuarioLinea(cedula) != linea)
+            {
+                uc.UpdateTipo(cedula, 1);    
             }
-            
-            usrPerLine.AddUsuarioEnLinea(cedula, linea, new DateOnly(DateTime.Now.Year,
-                DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute), new TimeOnly(0, 0));
 
-            Debug.WriteLine(lotControllerLinea.AddLotePorLinea("202310001", 1, new DateOnly(2000,1, 1), new TimeOnly(0, 0),
-                new TimeOnly(13, 0)));
+            usrPerLine.CheckUsuarioEnLinea(cedula, linea, new DateOnly(DateTime.Now.Year,
+            DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(9, 0), new TimeOnly(0, 0));
 
-            //lotControllerLinea.AddLotePorLinea("202310002", 2, new DateOnly(DateTime.Now.Year,
-            //    DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute), new TimeOnly(13, 0));
-
-            var registroWin = new RegistradoEmp(uc.GetUsuarioType(codigo), linea);
+            var registroWin = new RegistradoEmp(uc.GetUsuarioType(codigo), linea, cedula, "");
             registroWin.Show();
             this.Visible = false;
         }
