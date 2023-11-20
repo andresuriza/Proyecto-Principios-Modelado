@@ -68,6 +68,7 @@ public partial class MesContext : DbContext
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(20)
                 .HasColumnName("descripcion");
+            entity.Property(e => e.Estado).HasColumnName("estado");
             entity.Property(e => e.Productoid).HasColumnName("productoid");
 
             entity.HasOne(d => d.Producto).WithMany(p => p.Lotes)
@@ -78,7 +79,7 @@ public partial class MesContext : DbContext
 
         modelBuilder.Entity<LotePorLinea>(entity =>
         {
-            entity.HasKey(e => new { e.Lineaid, e.Loteid, e.Fecha, e.Horainicio }).HasName("lote_por_linea_pkey");
+            entity.HasKey(e => new { e.Lineaid, e.Loteid }).HasName("lote_por_linea_pkey");
 
             entity.ToTable("lote_por_linea");
 
@@ -87,8 +88,8 @@ public partial class MesContext : DbContext
                 .HasMaxLength(9)
                 .HasColumnName("loteid");
             entity.Property(e => e.Fecha).HasColumnName("fecha");
-            entity.Property(e => e.Horainicio).HasColumnName("horainicio");
             entity.Property(e => e.Horafinal).HasColumnName("horafinal");
+            entity.Property(e => e.Horainicio).HasColumnName("horainicio");
 
             entity.HasOne(d => d.Linea).WithMany(p => p.LotePorLineas)
                 .HasForeignKey(d => d.Lineaid)
@@ -181,6 +182,8 @@ public partial class MesContext : DbContext
             entity.Property(e => e.Codigo)
                 .HasMaxLength(4)
                 .HasColumnName("codigo");
+            entity.Property(e => e.Estaenbreak)
+                .HasColumnName("estaenbreak");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(10)
                 .HasColumnName("nombre");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace BaseDatos.Models;
@@ -16,6 +17,8 @@ public partial class Usuario
     public string Codigo { get; set; } = null!;
 
     public int Tipousuarioid { get; set; }
+
+    public int Estaenbreak { get; set; }
 
     public virtual ICollection<TecnicoPorLinea> TecnicoPorLineas { get; set; } = new List<TecnicoPorLinea>();
 

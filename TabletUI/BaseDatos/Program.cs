@@ -1,10 +1,12 @@
 ﻿using BaseDatos.Controllers;
 using BaseDatos.Models;
+using BaseDatos.Controllers;
+using BaseDatos.Models;
+
 public class Program
 {
     public static void Main(string[] args)
     {
-
 
         UsuarioController uc = new UsuarioController();
         LineaController lc = new LineaController();
@@ -27,8 +29,8 @@ public class Program
         // IMPRESION DE LOS DATOS EN CONSOLA
 
         Console.WriteLine("USUARIOS EN LA BASE DE DATOS");
-        //uc.AddUsuario("123456789", "Tanenbaum", "Arias", "Alfaro", "1111", 1)
-        
+        uc.AddUsuario("123456789", "Tanenbaum", "Arias", "Alfaro", "1111", 1, 0);
+
         for (int i = 0; i < listaUsers.Count; i++)
         {
             Console.WriteLine("Cedula: " + listaUsers[i].Cedula +
@@ -36,7 +38,8 @@ public class Program
                                 " Apell1: " + listaUsers[i].Apellido1 +
                                 " Apell2: " + listaUsers[i].Apellido2 +
                                 " Codigo: " + listaUsers[i].Codigo +
-                                " TipoUsuarioId: " + listaUsers[i].Tipousuarioid);
+                                " TipoUsuarioId: " + listaUsers[i].Tipousuarioid +
+                                " EstaEnBreak: " + listaUsers[i].Estaenbreak);
         }
         Console.WriteLine("\n");
 
@@ -81,7 +84,8 @@ public class Program
                                 " Descripcion: " + listaLotes[i].Descripcion +
                                 " ProductoId: " + listaLotes[i].Productoid +
                                 " Cant.Esperada: " + listaLotes[i].Cantidadrequerida +
-                                " Cant.Obtenida de momento: " + listaLotes[i].Cantidadobtenida);
+                                " Cant.Obtenida de momento: " + listaLotes[i].Cantidadobtenida +
+                                " Estado: " + listaLotes[i].Estado);
         }
 
         Console.WriteLine("\n");

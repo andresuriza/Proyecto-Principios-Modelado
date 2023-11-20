@@ -123,6 +123,30 @@ public class LoteController
         }
     }
 
+    public string UpdateStatusLote(int id, int nuevoEstado)
+    {
+        try
+        {
+            Lote lote = context.Lotes.Find(id);
+            if (lote == null)
+            {
+                return "Lote no existe. No puede actualizarlo si no existe";
+            }
+            else
+            {
+                lote.Estado = nuevoEstado;
+                context.Entry(lote).State = EntityState.Modified;
+                context.SaveChanges();
+                return "Lote borrado correctamente";
+            }
+        }
+        catch (Exception ex) 
+        {
+            Console.WriteLine(ex.ToString);
+            return "Ocurrio una excepcion";
+        }
+    }
+
     public string DeleteLote(string id)
     {
         try

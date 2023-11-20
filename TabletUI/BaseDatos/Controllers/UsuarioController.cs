@@ -1,6 +1,7 @@
 ﻿using BaseDatos.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 
 namespace BaseDatos.Controllers;
 public class UsuarioController
@@ -79,7 +80,7 @@ public class UsuarioController
     }
 
     public string AddUsuario(string cedula, string nombre, string ap1,
-                string ap2, string codigo, int tipoUsuario)
+                string ap2, string codigo, int tipoUsuario, int enBreak)
     {
         try
         {
@@ -99,7 +100,8 @@ public class UsuarioController
                     Apellido1 = ap1,
                     Apellido2 = ap2,
                     Codigo = codigo,
-                    Tipousuarioid = tipoUsuario
+                    Tipousuarioid = tipoUsuario,
+                    Estaenbreak = enBreak
                 };
                 
                 context.Usuarios.Add(user2);
@@ -114,8 +116,32 @@ public class UsuarioController
         }    
     }
 
+    public string UdpateBreakStatusUsuario(string cedula, int estaEnBreak)
+    {
+        try
+        {
+            Usuario user = context.Usuarios.Find(cedula);
+            if (user == null)
+            {
+                return "Usuario no existe. No lo puede actualizar si no existe";
+            }
+            else
+            {
+                user.Estaenbreak = estaEnBreak; // Solo puede ser 1 o 0
+                context.Entry(user).State = EntityState.Modified;
+                context.SaveChanges();
+                return "Usuario actualizado correctamente";
+
+            }
+        } catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+            return "Ocurrio una excepcion";
+        }
+    }
+
     public string UpdateUsuario(string cedula, string nombre, string ap1,
-                string ap2, string codigo, int tipoUsuario)
+                string ap2, string codigo, int tipoUsuario, int estaEnBreak)
     {
         try
         {

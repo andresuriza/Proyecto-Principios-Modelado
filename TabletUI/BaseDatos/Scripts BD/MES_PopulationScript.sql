@@ -27,7 +27,15 @@ VALUES ('Limpiador Facial Suave', 'Limpiador facial suave y refrescante 150g'),
        ('Crema Antiarrugas de Colágeno', 'Crema facial antienvejecimiento con colágeno 50mL'),
        ('Jabón de Manos de Coco', 'Jabón de manos suave con aroma a coco 250mL'),
        ('Aceite Esencial de Lavanda', 'Aceite esencial de lavanda puro 10mL');
-	   
-INSERT INTO LOTE (ID, Descripcion, ProductoID, CantidadRequerida, CantidadObtenida)
-VALUES ('202310001', 'Lote #1 10/2023', 2, 30, 0),
-		('202310002', 'Lote #2 10/2023', 4, 30, 0);		
+	
+-- Estados del lote: 
+-- 0 = sin iniciar, 1 = en proceso, 2 = en pausa, 3 = terminado	
+INSERT INTO LOTE (ID, Descripcion, ProductoID, CantidadRequerida, CantidadObtenida, Estado)
+VALUES ('202310001', 'Lote #1 10/2023', 2, 30, 0, 0),
+		('202310002', 'Lote #2 10/2023', 4, 30, 0, 0);	
+
+-- Estados del EstaEnBreak:
+-- 0 = no esta en break
+-- 1 = si esta en break
+INSERT INTO USUARIO 
+VALUES ('218850144','Juan', 'Perez', 'Mora', '0144', 1, 0);

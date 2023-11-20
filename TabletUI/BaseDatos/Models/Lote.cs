@@ -15,6 +15,8 @@ public partial class Lote
 
     public int Cantidadobtenida { get; set; }
 
+    public int Estado { get; set; }
+
     public virtual ICollection<LotePorLinea> LotePorLineas { get; set; } = new List<LotePorLinea>();
 
     public virtual Producto Producto { get; set; } = null!;
