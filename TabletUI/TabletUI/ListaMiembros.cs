@@ -122,7 +122,7 @@ namespace TabletUI
 
         private void ListaMiembros_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Estadisticas.Test();
+            Estadisticas.RunStats();
         }
     }
 }

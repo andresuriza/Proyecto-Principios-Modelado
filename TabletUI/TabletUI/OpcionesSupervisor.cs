@@ -1,9 +1,15 @@
-﻿namespace TabletUI
+﻿using BaseDatos.Controllers;
+using BaseDatos.Models;
+using System.Windows.Forms;
+
+namespace TabletUI
 {
     public partial class OpcionesSupervisor : Form
     {
         int codigo;
         int linea;
+        UsuarioPorLineaController usrPerLinea = new UsuarioPorLineaController();
+        UsuarioController uc = new UsuarioController();
         public OpcionesSupervisor(int codigo, int linea)
         {
             this.codigo = codigo;
@@ -28,21 +34,35 @@
 
         private void button4_MouseClick(object sender, MouseEventArgs e)
         {
-            // Logica para break
+            foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
+            {
+                Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
+
+                if (empleadoLista.Lineaid == linea)
+                {
+                    if (empleado.Tipousuarioid != 2) // Si no es supervisor
+                    {
+                        usrPerLinea.UpdateUsuarioTime(empleado.Cedula, new TimeOnly(0, 15));
+                    }
+                }
+            }
+
+            var registroWin = new RegistradoEmp(0, 0, "", "break");
+            registroWin.Show();
+            this.Visible = false;
         }
 
 
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             var logWin = new PantallaIngreso();
-            //var logWin = new SelectLine(2, "1237");
             logWin.Show();
             this.Visible = false;
         }
 
         private void OpcionesSupervisor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Estadisticas.Test();
+            Estadisticas.RunStats();
         }
     }
 }

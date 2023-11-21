@@ -45,13 +45,20 @@ namespace TabletUI
             {
                 if (empleadoLista.Lineaid == linea)
                 {
-                    n++;                      
+                    n++;
                 }
             }
 
-            if (n <= 8 || usrTipo == 2)
+            if (usrPerLine.GetUsuarioLinea(cedula) == linea || usrTipo == 2) // Si el usuario ya está registrado o es supervisor
             {
-                if (usrTipo == 3 && usrPerLine.GetUsuarioLinea(cedula) != linea)
+                usrPerLine.UpdateUsuarioTime(cedula, new TimeOnly(0,0));
+                var registroWin = new RegistradoEmp(uc.GetUsuarioType(codigo), linea, cedula, "");
+                registroWin.Show();
+                this.Visible = false;
+            }
+            else if (n <= 7) // Si hay espacio 
+            {
+                if (usrTipo == 3) // Tecnico se vuelve operario
                 {
                     uc.UpdateTipo(cedula, 1);
                 }
@@ -64,8 +71,7 @@ namespace TabletUI
                 this.Visible = false;
             }
             else 
-            {}
-            
+            {}  
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -85,7 +91,7 @@ namespace TabletUI
 
         private void SelectLine_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Estadisticas.RunStats();
         }
     }
 }

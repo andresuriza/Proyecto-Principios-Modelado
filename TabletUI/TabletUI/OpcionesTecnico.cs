@@ -53,7 +53,7 @@ namespace TabletUI
 
         private void OpcionesTecnico_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Estadisticas.RunStats();
         }
     }
 }

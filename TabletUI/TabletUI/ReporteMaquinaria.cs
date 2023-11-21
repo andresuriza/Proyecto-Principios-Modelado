@@ -35,7 +35,7 @@
 
         private void ReporteMaquinaria_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Estadisticas.Test();
+            Estadisticas.RunStats();
         }
     }
 }

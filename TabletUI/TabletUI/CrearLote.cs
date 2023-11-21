@@ -31,7 +31,7 @@ namespace TabletUI
             else
             {
                 lotController.AddLote(idText.Text, descText.Text, int.Parse(productidText.Text),
-                    int.Parse(cantidadText.Text), 0);
+                    int.Parse(cantidadText.Text), 1);
                 lotControllerLinea.AddLotePorLinea(idText.Text, linea, new DateOnly(DateTime.Now.Year,
                     DateTime.Now.Month, DateTime.Now.Day), new TimeOnly(9, 0),
                     new TimeOnly(0, 0));

@@ -67,7 +67,7 @@ namespace TabletUI
 
         private void RegistradoEmp_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Estadisticas.Test();
+            Estadisticas.RunStats();
         }
     }
 }

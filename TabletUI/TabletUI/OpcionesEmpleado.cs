@@ -10,8 +10,7 @@ namespace TabletUI
         UsuarioPorLineaController usrPerLinea = new UsuarioPorLineaController();
         UsuarioController uc = new UsuarioController();
         string cedula;
-        Empleado emp = new Empleado();
-
+        
         public OpcionesEmpleado(string cedula)
         {
             this.cedula = cedula;
@@ -37,77 +36,47 @@ namespace TabletUI
 
         private void breakButton_MouseClick(object sender, MouseEventArgs e)
         {
-            if (emp.GetOnBreak() == false)
-            {
-                emp.onBreak = true;
+            usrPerLinea.UpdateUsuarioTime(this.cedula, new TimeOnly(0,15));
 
-                TimeOnly pastTime = usrPerLinea.GetUsuarioTime(cedula);
-                //TimeOnly currTime = new TimeOnly(DateTime.Now.Hour + 2, DateTime.Now.Minute);
-                TimeOnly currTime = new TimeOnly(13, 0);
-
-                var registroWin = new RegistradoEmp(0, 0, "", "break");
-                registroWin.Show();
-                this.Visible = false;
-
-                emp.SetInitialTime(pastTime);
-                emp.Break(currTime);
-
-                string[] authors;
-
-                authors = new string[] {"Empleado: " +  cedula, "Inicio: " + emp.initialTime,
-                    "Actual: " + currTime, "Break finalizado, " + "horas laboradas: " + emp.GetWorkTime()};
-
-                File.WriteAllLines("Empleados.txt", authors);
-
-                currTime = new TimeOnly(17, 0);
-
-                emp.Resume(new TimeOnly(14, 0));
-                emp.Break(currTime);
-
-                authors = new string[] {"Empleado: " +  cedula, "Inicio: " + emp.initialTime,
-                    "Actual: " + currTime, "Break finalizado, " + "horas laboradas: " + emp.GetWorkTime()};
-
-                File.AppendAllLines("Empleados.txt", authors);
-                
-                string readText = File.ReadAllText("empleados.txt");
-                Debug.WriteLine(readText);
-            }
+            var registroWin = new RegistradoEmp(0, 0, "", "break");
+            registroWin.Show();
+            this.Visible = false;
         }
 
         private void OpcionesEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Estadisticas.RunStats();
         }
     }
-    public class Empleado
-    {
-        public TimeSpan workTime;
-        public TimeOnly initialTime;
-        public Boolean onBreak = false;
+    //public class Empleado
+    //{
+    //    public TimeSpan workTime;
+    //    public TimeOnly initialTime;
+    //    public Boolean onBreak = false;
 
-        public void SetInitialTime(TimeOnly initialTime)
-        {
-            this.initialTime = initialTime;
-        }
+    //    public void SetInitialTime(TimeOnly initialTime)
+    //    {
+    //        this.initialTime = initialTime;
+    //    }
 
-        public void Break(TimeOnly currTime)
-        {
-            workTime = workTime + (currTime - initialTime);
-        }
+    //    public void Break(TimeOnly currTime)
+    //    {
+    //        workTime = workTime + (currTime - initialTime);
+    //    }
 
-        public void Resume(TimeOnly currTime)
-        {
-            initialTime = currTime;
-        }
+    //    public void Resume(TimeOnly currTime)
+    //    {
+    //        initialTime = currTime;
+    //    }
 
-        public TimeSpan GetWorkTime()
-        {
-            return workTime;
-        }
+    //    public TimeSpan GetWorkTime()
+    //    {
+    //        return workTime;
+    //    }
 
-        public Boolean GetOnBreak()
-        {
-            return onBreak;
-        }
-    }
+    //    public Boolean GetOnBreak()
+    //    {
+    //        return onBreak;
+    //    }
+    //}
 }

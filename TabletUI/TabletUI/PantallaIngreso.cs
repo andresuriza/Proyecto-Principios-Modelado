@@ -34,7 +34,7 @@ namespace TabletUI
 
         private void PantallaIngreso_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Estadisticas.Test();
+            Estadisticas.RunStats();
         }
     }
 }

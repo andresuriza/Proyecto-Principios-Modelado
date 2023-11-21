@@ -133,6 +133,11 @@ public class UsuarioPorLineaController
         return context.UsuarioPorLineas.FirstOrDefault(u => u.Cedula == cedula).Horainicio;
     }
 
+    public TimeOnly GetDelays(string cedula)
+    {
+        return context.UsuarioPorLineas.FirstOrDefault(u => u.Cedula == cedula).Horafinal;
+    }
+
     public string DeleteUsuarioEnLinea(string cedula, int lineaId)
     {
         try

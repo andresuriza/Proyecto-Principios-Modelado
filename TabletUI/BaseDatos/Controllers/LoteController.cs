@@ -39,8 +39,8 @@ public class LoteController
         }
     }
 
-    public string AddLote(string id, string descripcion, int productoid, int cantidadRequerida, 
-                        int cantidadObtenida = 0)
+    public string AddLote(string id, string descripcion, int productoid, int cantidadRequerida, int estado, 
+        int cantidadObtenida = 0)
     {
         try
         {
@@ -57,7 +57,8 @@ public class LoteController
                     Descripcion = descripcion,
                     Productoid = productoid,
                     Cantidadrequerida = cantidadRequerida,
-                    Cantidadobtenida = cantidadObtenida
+                    Cantidadobtenida = cantidadObtenida,
+                    Estado = estado
                 };
                 context.Lotes.Add(lote2);
                 context.SaveChanges();
@@ -123,11 +124,11 @@ public class LoteController
         }
     }
 
-    public string UpdateStatusLote(int id, int nuevoEstado)
+    public string UpdateStatusLote(string id, int nuevoEstado)
     {
         try
         {
-            Lote lote = context.Lotes.Find(id);
+            Lote lote = context.Lotes.FirstOrDefault(u => u.Id == id);
             if (lote == null)
             {
                 return "Lote no existe. No puede actualizarlo si no existe";

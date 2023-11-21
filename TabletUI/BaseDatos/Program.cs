@@ -29,7 +29,16 @@ public class Program
         // IMPRESION DE LOS DATOS EN CONSOLA
 
         Console.WriteLine("USUARIOS EN LA BASE DE DATOS");
-        uc.AddUsuario("123456789", "Tanenbaum", "Arias", "Alfaro", "1111", 1, 0);
+        //uc.AddUsuario("118891234", "Rene", "Amancio", "Melendez", "1234", 1, 0);
+        //uc.AddUsuario("118891235", "Tanenbaum", "Arias", "Alfaro", "1235", 1, 0);
+        //uc.AddUsuario("118891236", "Carmelita", "Fausto", "Severiano", "1236", 1, 0);
+        //uc.AddUsuario("118891237", "Cristobal", "Domingo", "Alba", "1237", 2, 0);
+        //uc.AddUsuario("118891238", "Nereida", "Yurena", "Vargas", "1238", 1, 0);
+        //uc.AddUsuario("118891239", "Abundio", "Arleth", "Renato", "1239", 1, 0);
+        //uc.AddUsuario("118891240", "Adolfito", "Antelmo", "Rodriguez", "1240", 1, 0);
+        //uc.AddUsuario("118891241", "Hermes", "Renata", "Febe", "1241", 1, 0);
+        //uc.AddUsuario("118891242", "David", "Canas", "Figueres", "1242", 1, 0);
+        //uc.AddUsuario("118891243", "Juliana", "Granados", "Lopez", "1243", 1, 0);
 
         for (int i = 0; i < listaUsers.Count; i++)
         {
