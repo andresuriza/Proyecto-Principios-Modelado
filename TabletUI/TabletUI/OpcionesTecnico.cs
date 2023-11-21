@@ -24,7 +24,8 @@ namespace TabletUI
 
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
-            var w1 = new ReporteMaquinaria(codigo);
+            var w1 = new ReporteMaquinaria(codigo, linea);
+            w1.CheckLinea();
             w1.Show();
             this.Visible = false;
         }

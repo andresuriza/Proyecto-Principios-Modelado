@@ -11,6 +11,7 @@ namespace TabletUI
         private static UsuarioController uc = new UsuarioController();
         private static LotePorLineaController lotControllerLinea = new LotePorLineaController();
         private static LoteController lotController = new LoteController();
+        private static LineaController lineaController = new LineaController();
 
         public static TimeSpan Break(string cedula, TimeOnly currTime)
         {
@@ -21,6 +22,7 @@ namespace TabletUI
         {
             GetEmpleadoTimes();
             GetLoteTimes();
+            GetMaquinas();
         }
 
         public static void GetEmpleadoTimes()
@@ -56,19 +58,47 @@ namespace TabletUI
             foreach (var lote in lotControllerLinea.GetAllLotesPorLineas())
             {
                 Lote loteEspecifico = lotController.GetLoteById(lote.Loteid);
+                TimeOnly pastTime = lotControllerLinea.GetLoteTime(lote.Loteid);
+                TimeSpan elapsedTime = currTime - pastTime;
 
                 if (loteEspecifico.Estado == 3)
                 {
-                    TimeOnly pastTime = lotControllerLinea.GetLoteTime(lote.Loteid);
-                    TimeSpan elapsedTime = currTime - pastTime;
-
                     loteStats = new string[] {loteEspecifico.Id + "," + loteEspecifico.Descripcion + "," + 
                         loteEspecifico.Productoid + "," + loteEspecifico.Cantidadrequerida + "," + lote.Horainicio + "," + 
                         elapsedTime * 0.6 + "," + elapsedTime * 0.1 + "," + elapsedTime * 0.05 + "," + elapsedTime * 0.05 + 
-                        "," + elapsedTime * 0.2 + "," + currTime};
-
-                    File.AppendAllLines("Lotes.csv", loteStats);
+                        "," + elapsedTime * 0.2 + "," + currTime};   
                 }
+                else
+                {
+                    Random rnd = new Random();
+                    loteStats = new string[] {loteEspecifico.Id + "," + loteEspecifico.Descripcion + "," +
+                        loteEspecifico.Productoid + "," + rnd.Next(0, loteEspecifico.Cantidadrequerida) + "," + lote.Horainicio + "," +
+                        "Sin finalizar,Sin finalizar,Sin finalizar,Sin finalizar,Sin finalizar,Sin finalizar"};
+                }
+                File.AppendAllLines("Lotes.csv", loteStats);
+            }
+        }
+
+        public static void GetMaquinas() // Metodo que las clases llaman al cerrarse
+        {
+            string[] maquinas;
+            maquinas = new string[] {"Linea,Estado de maquinaria"};
+
+            File.WriteAllLines("Maquinas.csv", maquinas);
+
+            foreach (var lineas in lineaController.GetAllLineas())
+            {
+                if (lineas.Estadoid == 1)
+                {
+                    maquinas = new string[] {lineas.Id + ",Funcionando"};
+                }
+
+                else if (lineas.Estadoid == 2)
+                {
+                    maquinas = new string[] {lineas.Id + ",Con fallos" };
+                }
+
+                File.AppendAllLines("Maquinas.csv", maquinas);
             }
         }
     }
