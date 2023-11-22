@@ -16,19 +16,19 @@ namespace TabletUI
         LotePorLineaController lotControllerLinea = new LotePorLineaController();
         LoteController lotController = new LoteController();
         int linea;
+
+        // Constructor que crea interfaz y guarda valor de linea
         public CrearLote(int linea)
         {
             InitializeComponent();
             this.linea = linea;
         }
 
+        // Boton que crea lote y cierra ventana al ingresar los datos
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (String.IsNullOrEmpty(idText.Text) && String.IsNullOrEmpty(descText.Text) && String.IsNullOrEmpty(productidText.Text)
-                && String.IsNullOrEmpty(cantidadText.Text)) // Si está vacío no se cierra ventana
-            {}
-            
-            else
+            if (!String.IsNullOrEmpty(idText.Text) || !String.IsNullOrEmpty(descText.Text) || !String.IsNullOrEmpty(productidText.Text)
+                || !String.IsNullOrEmpty(cantidadText.Text))
             {
                 lotController.AddLote(idText.Text, descText.Text, int.Parse(productidText.Text),
                     int.Parse(cantidadText.Text), 1);

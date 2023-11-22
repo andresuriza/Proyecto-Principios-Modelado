@@ -11,45 +11,30 @@ namespace TabletUI
 
         UsuarioController uc = new UsuarioController();
         UsuarioPorLineaController usrPerLinea = new UsuarioPorLineaController();
+
+        // Constructor que crea interfaz y obtiene empleados en lista para mostrarlos en la listbox
         public ListaMiembros(int codigo, int lineaId)
         {
 
             this.codigo = codigo;
             this.lineaId = lineaId;
             InitializeComponent();
-            GetMiembros();
+            GetEmpleados();
             //deleteAll();
         }
 
+        // Metodo que elimina todos los empleados en todas las lineas
         private void deleteAll()
         {
             foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
                 Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 1);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 2);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 3);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 4);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 5);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 6);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 7);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 8);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 9);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 10);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 11);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 12);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 13);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 14);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 15);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 16);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 17);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 18);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 19);
-                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, 20);
+                usrPerLinea.DeleteUsuarioEnLinea(empleado.Cedula, usrPerLinea.GetUsuarioLinea(empleado.Cedula));
             }
         }
 
-        private void GetMiembros()
+        // Metodo que obtiene los operarios y tecnicos en una linea y lo agrega a la listbox, si es tecnico se indica en la listbox
+        private void GetEmpleados()
         {
             foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
@@ -57,14 +42,12 @@ namespace TabletUI
 
                 if (empleadoLista.Lineaid == lineaId)
                 {
-                    if (empleado.Tipousuarioid == 1) // Si es operario
+                    if (empleado.Tipousuarioid == 1)
                     {
                         listBox1.Items.Add(empleado.Cedula + " " + empleado.Nombre + " " + empleado.Apellido1 + " " +
                             empleado.Apellido2);
-
-                        //Debug.WriteLine(usrPerLinea.GetUsuarioTime(empleado.Cedula).ToString());
                     }
-                    else if (empleado.Tipousuarioid == 3) // Si es tecnico
+                    else if (empleado.Tipousuarioid == 3)
                     {
                         listBox1.Items.Add(empleado.Cedula + " " + empleado.Nombre + " " + empleado.Apellido1 + " " +
                             empleado.Apellido2 + " (Tecnico)");
@@ -73,22 +56,21 @@ namespace TabletUI
             }
         }
 
+        // Metodo que convierte a los tecnicos en operarios
         private void removeTecnicos()
         {
             foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
                 Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
 
-                if (empleado.Tipousuarioid == 3) // Si es tecnico
+                if (empleado.Tipousuarioid == 3 && empleadoLista.Lineaid == lineaId)
                 {
-                    if (empleadoLista.Lineaid == lineaId)
-                    {
-                        uc.UpdateTipo(empleadoLista.Cedula, 1);
-                    }
+                    uc.UpdateTipo(empleadoLista.Cedula, 1);
                 }
             }
         }
 
+        // Boton que regresa a usuario a su ventana de opciones correspondiente, ya sea supervisor o tecnico
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (codigo == 2)
@@ -105,21 +87,24 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Metodo que permite al supervisor volver tecnico a un empleado al hacer doble click en la listbox
         private void listBox1_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
-            if (codigo == 2) // Solamente si es supervisor
+            if (codigo == 2)
             {
                 int index = this.listBox1.IndexFromPoint(e.Location);
-                if (index != System.Windows.Forms.ListBox.NoMatches)
+
+                if (index != ListBox.NoMatches)
                 {
                     removeTecnicos();
                     uc.UpdateTipo(listBox1.Items[index].ToString().Substring(0, 9), 3);
                     listBox1.Items.Clear();
-                    GetMiembros();
+                    GetEmpleados();
                 }
             }
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void ListaMiembros_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();

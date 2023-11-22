@@ -282,7 +282,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // SelectLine
             // 
@@ -316,7 +315,6 @@
             Name = "SelectLine";
             Text = "SelectLine";
             FormClosed += SelectLine_FormClosed;
-            Load += SelectLine_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

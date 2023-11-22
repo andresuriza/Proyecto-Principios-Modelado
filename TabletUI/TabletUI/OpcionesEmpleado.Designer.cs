@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            terminarButton = new Button();
             breakButton = new Button();
             returnButton = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            terminarButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -46,16 +46,6 @@
             label1.Size = new Size(259, 20);
             label1.TabIndex = 0;
             label1.Text = "Hola operario, seleccione una opción:";
-            // 
-            // terminarButton
-            // 
-            terminarButton.Location = new Point(289, 274);
-            terminarButton.Name = "terminarButton";
-            terminarButton.Size = new Size(216, 84);
-            terminarButton.TabIndex = 1;
-            terminarButton.Text = "Terminar turno";
-            terminarButton.UseVisualStyleBackColor = true;
-            terminarButton.MouseClick += terminarButton_MouseClick;
             // 
             // breakButton
             // 
@@ -99,6 +89,16 @@
             pictureBox2.TabIndex = 23;
             pictureBox2.TabStop = false;
             // 
+            // terminarButton
+            // 
+            terminarButton.Location = new Point(304, 274);
+            terminarButton.Name = "terminarButton";
+            terminarButton.Size = new Size(216, 84);
+            terminarButton.TabIndex = 1;
+            terminarButton.Text = "Terminar turno";
+            terminarButton.UseVisualStyleBackColor = true;
+            terminarButton.MouseClick += terminarButton_MouseClick;
+            // 
             // OpcionesEmpleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -123,10 +123,10 @@
         #endregion
 
         private Label label1;
-        private Button terminarButton;
         private Button breakButton;
         private Button returnButton;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button terminarButton;
     }
 }

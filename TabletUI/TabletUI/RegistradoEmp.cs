@@ -17,6 +17,8 @@ namespace TabletUI
         string cedula;
         string tipo;
 
+        // Constructor que crea interfaz y guarda valores de cedula, codigo, linea y tipo de usuario. Tambien se reutiliza para la
+        // ventana emergente de inicio de un break
         public RegistradoEmp(int codigo, int linea, string cedula, string tipo)
         {
             this.cedula = cedula;
@@ -32,6 +34,8 @@ namespace TabletUI
             }
         }
 
+        // Boton que verifica que tipo de usuario es y abre la ventana correspondiente, si es un break regresa a la pantalla de
+        // ingreso
         private void button1_Click(object sender, EventArgs e)
         {
             if (tipo == "break")
@@ -65,6 +69,7 @@ namespace TabletUI
             }
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void RegistradoEmp_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();

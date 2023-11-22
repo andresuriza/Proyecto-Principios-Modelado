@@ -14,6 +14,8 @@ namespace TabletUI
     {
         int codigo;
         int linea;
+
+        // Constructor que crea interfaz y guarda valores de codigo del usuario y linea
         public OpcionesTecnico(int codigo, int linea)
         {
             this.codigo = codigo;
@@ -21,7 +23,8 @@ namespace TabletUI
             InitializeComponent();
 
         }
-
+        
+        // Boton que abre la ventana el reporte de maquinaria
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
             var w1 = new ReporteMaquinaria(codigo, linea);
@@ -30,6 +33,7 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Boton que abre ventana para ver lista de empleados en la linea
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
 
@@ -38,6 +42,7 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Boton que abre la ventana para ver opciones de los lotes
         private void button3_MouseClick(object sender, MouseEventArgs e)
         {
             var loteWin = new OpcionesLote(codigo, linea);
@@ -45,6 +50,7 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Boton que regresa usuario a la ventana de ingreso
         private void button4_MouseClick(object sender, MouseEventArgs e)
         {
             var logWin = new PantallaIngreso();
@@ -52,6 +58,7 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void OpcionesTecnico_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();

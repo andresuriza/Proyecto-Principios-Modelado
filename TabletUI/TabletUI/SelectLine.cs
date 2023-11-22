@@ -1,16 +1,4 @@
 ﻿using BaseDatos.Controllers;
-using BaseDatos.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TabletUI
 {
@@ -22,6 +10,8 @@ namespace TabletUI
         LotePorLineaController lotControllerLinea = new LotePorLineaController();
         UsuarioController uc = new UsuarioController();
         LoteController lotController = new LoteController();
+
+        // Constructor que crea interfaz y guarda valores del tipo de usuario y su codigo
         public SelectLine(int usrTipo, string codigo)
         {
             this.usrTipo = usrTipo;
@@ -29,16 +19,11 @@ namespace TabletUI
             InitializeComponent();
         }
 
-        private void SelectLine_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        // Metodo que procesa la ventana a abrir al seleccionar una linea 
         private void button_Click(object sender, EventArgs e)
         {
             int linea = int.Parse((sender as Button).Text);
             string cedula = uc.GetUsuarioByCodigo(codigo).Cedula;
-
             int n = 0;
 
             foreach (var empleadoLista in usrPerLine.GetAllUsuarios())
@@ -49,16 +34,16 @@ namespace TabletUI
                 }
             }
 
-            if (usrPerLine.GetUsuarioLinea(cedula) == linea || usrTipo == 2) // Si el usuario ya está registrado o es supervisor
+            if (usrPerLine.GetUsuarioLinea(cedula) == linea || usrTipo == 2)
             {
                 usrPerLine.UpdateUsuarioTime(cedula, new TimeOnly(0,0));
                 var registroWin = new RegistradoEmp(uc.GetUsuarioType(codigo), linea, cedula, "");
                 registroWin.Show();
                 this.Visible = false;
             }
-            else if (n <= 7) // Si hay espacio 
+            else if (n <= 7) 
             {
-                if (usrTipo == 3) // Tecnico se vuelve operario
+                if (usrTipo == 3) 
                 {
                     uc.UpdateTipo(cedula, 1);
                 }
@@ -70,25 +55,11 @@ namespace TabletUI
                 registroWin.Show();
                 this.Visible = false;
             }
-            else 
-            {}  
+            else
+            { }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+        // Llama a la clase estadisticas al cerrarse
         private void SelectLine_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();

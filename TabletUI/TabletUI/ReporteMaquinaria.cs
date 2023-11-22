@@ -9,6 +9,8 @@ namespace TabletUI
         string estado;
         int linea;
         LineaController lineaController = new LineaController();
+
+        // Constructor que crea interfaz y guarda valores de codigo de usuario y la linea
         public ReporteMaquinaria(int codigo, int linea)
         {
             this.codigo = codigo;
@@ -16,6 +18,7 @@ namespace TabletUI
             InitializeComponent();
         }
 
+        // Boton que regresa tecnico a la ventana de opciones
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             this.Visible = false;
@@ -23,6 +26,7 @@ namespace TabletUI
             w1.Show();
         }
 
+        // Metodo que revisa si la maquinaria en la linea esta funcionando o no
         public void CheckLinea()
         {
             foreach (var lineas in lineaController.GetAllLineas())
@@ -46,6 +50,7 @@ namespace TabletUI
             }
         }
 
+        // Boton que cambia el estado de la linea a funcional o no funcional
         private void estadoButton_MouseClick(object sender, MouseEventArgs e)
         {
             foreach (var lineas in lineaController.GetAllLineas())
@@ -70,6 +75,7 @@ namespace TabletUI
             }
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void ReporteMaquinaria_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();

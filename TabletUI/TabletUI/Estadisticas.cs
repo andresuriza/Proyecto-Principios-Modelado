@@ -13,18 +13,21 @@ namespace TabletUI
         private static LoteController lotController = new LoteController();
         private static LineaController lineaController = new LineaController();
 
+        // Metodo que calcula el tiempo trabajado por un empleado
         public static TimeSpan Break(string cedula, TimeOnly currTime)
         {
             return currTime - usrPerLinea.GetDelays(cedula) - (usrPerLinea.GetUsuarioTime(cedula) - new TimeOnly(0, 0));
         }
 
-        public static void RunStats() // Metodo que las clases llaman al cerrarse
+        // Llama los metodos para crear archivos .csv que las clases llaman al cerrarse
+        public static void RunStats() 
         {
             GetEmpleadoTimes();
             GetLoteTimes();
             GetMaquinas();
         }
 
+        // Metodo que calcula el tiempo trabajado por un empleado y lo guarda en un archivo .csv
         public static void GetEmpleadoTimes()
         {
             TimeOnly currTime = new TimeOnly(17, 0);
@@ -44,7 +47,8 @@ namespace TabletUI
             } 
         }
 
-        public static void GetLoteTimes() // Metodo que las clases llaman al cerrarse
+        // Metodo que calcula el tiempo empleado en cada etapa de produccion de un lote y lo guarda en un archivo .csv
+        public static void GetLoteTimes() 
         {
             TimeOnly currTime = new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute);
 
@@ -79,7 +83,8 @@ namespace TabletUI
             }
         }
 
-        public static void GetMaquinas() // Metodo que las clases llaman al cerrarse
+        // Metodo que obtiene las maquinas en cada linea y su estado y lo guarda en un archivo .csv
+        public static void GetMaquinas()
         {
             string[] maquinas;
             maquinas = new string[] {"Linea,Estado de maquinaria"};

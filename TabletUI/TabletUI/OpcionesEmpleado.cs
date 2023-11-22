@@ -10,18 +10,15 @@ namespace TabletUI
         UsuarioPorLineaController usrPerLinea = new UsuarioPorLineaController();
         UsuarioController uc = new UsuarioController();
         string cedula;
-        
+
+        // Constructor que crea interfaz y guarda valor de cedula
         public OpcionesEmpleado(string cedula)
         {
             this.cedula = cedula;
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Metodo que regresa usuario a la pantalla de ingreso
         private void returnButton_MouseClick(object sender, MouseEventArgs e)
         {
             this.Visible = false;
@@ -29,54 +26,26 @@ namespace TabletUI
             w1.Show();
         }
 
+        // Metodo que registra hora actual a la que el empleado termino su turno
         private void terminarButton_MouseClick(object sender, MouseEventArgs e)
         {
-
+            usrPerLinea.UpdateUsuarioTime(cedula, new TimeOnly(DateTime.Now.Hour, DateTime.Now.Minute));
         }
 
+        // Metodo que agrega un break de 15 minutos al tiempo de trabajo del empleado
         private void breakButton_MouseClick(object sender, MouseEventArgs e)
         {
-            usrPerLinea.UpdateUsuarioTime(this.cedula, new TimeOnly(0,15));
+            usrPerLinea.UpdateUsuarioTime(this.cedula, new TimeOnly(0, 15));
 
             var registroWin = new RegistradoEmp(0, 0, "", "break");
             registroWin.Show();
             this.Visible = false;
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void OpcionesEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();
         }
     }
-    //public class Empleado
-    //{
-    //    public TimeSpan workTime;
-    //    public TimeOnly initialTime;
-    //    public Boolean onBreak = false;
-
-    //    public void SetInitialTime(TimeOnly initialTime)
-    //    {
-    //        this.initialTime = initialTime;
-    //    }
-
-    //    public void Break(TimeOnly currTime)
-    //    {
-    //        workTime = workTime + (currTime - initialTime);
-    //    }
-
-    //    public void Resume(TimeOnly currTime)
-    //    {
-    //        initialTime = currTime;
-    //    }
-
-    //    public TimeSpan GetWorkTime()
-    //    {
-    //        return workTime;
-    //    }
-
-    //    public Boolean GetOnBreak()
-    //    {
-    //        return onBreak;
-    //    }
-    //}
 }

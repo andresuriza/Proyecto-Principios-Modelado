@@ -10,6 +10,8 @@ namespace TabletUI
         int linea;
         UsuarioPorLineaController usrPerLinea = new UsuarioPorLineaController();
         UsuarioController uc = new UsuarioController();
+
+        // Constructor que crea interfaz y guarda valores de codigo y linea del supervisor
         public OpcionesSupervisor(int codigo, int linea)
         {
             this.codigo = codigo;
@@ -17,6 +19,7 @@ namespace TabletUI
             InitializeComponent();
         }
 
+        // Boton que abre la interfaz para ver los empleados en la linea
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
             var miembrosWin = new ListaMiembros(codigo, linea);
@@ -25,6 +28,7 @@ namespace TabletUI
 
         }
 
+        // Boton que abre la interfaz para accesar las opciones del lote
         private void button3_MouseClick(object sender, MouseEventArgs e)
         {
             var loteWin = new OpcionesLote(codigo, linea);
@@ -32,18 +36,16 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Boton que procesa un break de 15 minutos para todos los empleados en la linea
         private void button4_MouseClick(object sender, MouseEventArgs e)
         {
             foreach (var empleadoLista in usrPerLinea.GetAllUsuarios())
             {
                 Usuario empleado = uc.GetUsuarioByCedula(empleadoLista.Cedula);
 
-                if (empleadoLista.Lineaid == linea)
+                if (empleadoLista.Lineaid == linea && empleado.Tipousuarioid != 2)
                 {
-                    if (empleado.Tipousuarioid != 2) // Si no es supervisor
-                    {
-                        usrPerLinea.UpdateUsuarioTime(empleado.Cedula, new TimeOnly(0, 15));
-                    }
+                    usrPerLinea.UpdateUsuarioTime(empleado.Cedula, new TimeOnly(0, 15));
                 }
             }
 
@@ -52,7 +54,7 @@ namespace TabletUI
             this.Visible = false;
         }
 
-
+        // Boton que devuelve a la pantalla de ingreso
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             var logWin = new PantallaIngreso();
@@ -60,6 +62,7 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void OpcionesSupervisor_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();

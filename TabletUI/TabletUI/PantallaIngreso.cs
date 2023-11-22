@@ -9,11 +9,13 @@ namespace TabletUI
         private string codigo;
         UsuarioController uc = new UsuarioController();
 
+        // Constructor interfaz
         public PantallaIngreso()
         {
             InitializeComponent();
         }
 
+        // Metodo al presionar boton de ingreso que procesa el codigo ingresado
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             codigo = richTextBox1.Text;
@@ -32,6 +34,7 @@ namespace TabletUI
             }
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void PantallaIngreso_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();

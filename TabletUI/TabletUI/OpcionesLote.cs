@@ -11,6 +11,9 @@ namespace TabletUI
 
         LotePorLineaController lotControllerLinea = new LotePorLineaController();
         LoteController lotController = new LoteController();
+
+        // Constructor que crea interfaz, guarda valores de codigo de usuario y linea, tambien llama al metodo para obtener
+        // lotes
         public OpcionesLote(int codigo, int linea)
         {
             this.codigo = codigo;
@@ -20,23 +23,22 @@ namespace TabletUI
             GetLotes();
         }
 
+        // Metodo que obtiene todos los lotes activos en una linea
         private void GetLotes()
         {
             foreach (var lote in lotControllerLinea.GetAllLotesPorLineas())
             {
                 Lote loteEspecifico = lotController.GetLoteById(lote.Loteid);
-                if (loteEspecifico.Estado != 3)
+                if (loteEspecifico.Estado != 3 && lote.Lineaid == linea)
                 {
-                    if (lote.Lineaid == linea)
-                    {
-                        listBox1.Items.Add("Id: " + loteEspecifico.Id + " Descripcion: " + loteEspecifico.Descripcion +
-                            " ProductoId: " + loteEspecifico.Productoid + " Cant.Esperada: " + loteEspecifico.Cantidadrequerida +
-                            " Cant.Obtenida de momento: " + loteEspecifico.Cantidadobtenida);
-                    }
+                    listBox1.Items.Add("Id: " + loteEspecifico.Id + " Descripcion: " + loteEspecifico.Descripcion +
+                        " ProductoId: " + loteEspecifico.Productoid + " Cant.Esperada: " + loteEspecifico.Cantidadrequerida +
+                        " Cant.Obtenida de momento: " + loteEspecifico.Cantidadobtenida);
                 }
             }
         }
 
+        // Boton que regresa al usuario ya sea tecnico o operador a su ventana de opciones
         private void button2_Click(object sender, EventArgs e)
         {
             if (codigo == 2)
@@ -53,6 +55,7 @@ namespace TabletUI
             this.Visible = false;
         }
 
+        // Boton que abre ventana para crear lote
         private void button1_Click(object sender, EventArgs e)
         {
             var window = new CrearLote(linea);
@@ -61,6 +64,7 @@ namespace TabletUI
             GetLotes();
         }
 
+        // Boton que marca un lote como finalizado y lo elimina de la lista
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int index = this.listBox1.IndexFromPoint(e.Location);
@@ -79,6 +83,7 @@ namespace TabletUI
             }
         }
 
+        // Llama a la clase estadisticas al cerrarse
         private void OpcionesLote_FormClosed(object sender, FormClosedEventArgs e)
         {
             Estadisticas.RunStats();
