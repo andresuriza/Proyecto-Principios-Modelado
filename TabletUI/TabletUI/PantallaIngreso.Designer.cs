@@ -40,11 +40,12 @@
             // 
             // selectLine_b
             // 
-            selectLine_b.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            selectLine_b.Location = new Point(536, 425);
-            selectLine_b.Margin = new Padding(3, 4, 3, 4);
+            selectLine_b.Cursor = Cursors.Hand;
+            selectLine_b.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            selectLine_b.Location = new Point(475, 441);
+            selectLine_b.Margin = new Padding(4, 5, 4, 5);
             selectLine_b.Name = "selectLine_b";
-            selectLine_b.Size = new Size(232, 88);
+            selectLine_b.Size = new Size(290, 110);
             selectLine_b.TabIndex = 0;
             selectLine_b.Text = "Ingresar";
             selectLine_b.UseVisualStyleBackColor = true;
@@ -53,18 +54,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(591, 222);
+            label1.Location = new Point(544, 188);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(129, 20);
+            label1.Size = new Size(158, 25);
             label1.TabIndex = 1;
             label1.Text = "Ingrese su código:";
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(352, 297);
-            richTextBox1.Margin = new Padding(3, 4, 3, 4);
+            richTextBox1.Location = new Point(245, 281);
+            richTextBox1.Margin = new Padding(4, 5, 4, 5);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(604, 58);
+            richTextBox1.Size = new Size(754, 72);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
             richTextBox1.ZoomFactor = 2F;
@@ -73,9 +75,10 @@
             // 
             errorLabel.AutoSize = true;
             errorLabel.ForeColor = Color.Red;
-            errorLabel.Location = new Point(484, 380);
+            errorLabel.Location = new Point(410, 385);
+            errorLabel.Margin = new Padding(4, 0, 4, 0);
             errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(330, 20);
+            errorLabel.Size = new Size(399, 25);
             errorLabel.TabIndex = 3;
             errorLabel.Text = "Código no es válido, por favor intentar de nuevo";
             errorLabel.Visible = false;
@@ -85,6 +88,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.header;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1280, 83);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -95,7 +99,8 @@
             // 
             pictureBox2.BackgroundImageLayout = ImageLayout.Center;
             pictureBox2.Image = Properties.Resources.bottom_bar;
-            pictureBox2.Location = new Point(0, 636);
+            pictureBox2.Location = new Point(0, 627);
+            pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(1280, 37);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -104,9 +109,9 @@
             // 
             // PantallaIngreso
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1258, 664);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(errorLabel);
@@ -114,10 +119,11 @@
             Controls.Add(label1);
             Controls.Add(selectLine_b);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "PantallaIngreso";
             Text = "PantallaIngreso";
             FormClosed += PantallaIngreso_FormClosed;
+            Load += PantallaIngreso_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

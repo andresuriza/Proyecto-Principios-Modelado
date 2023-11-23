@@ -41,17 +41,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(418, 199);
+            label1.Location = new Point(369, 212);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(406, 20);
+            label1.Size = new Size(481, 25);
             label1.TabIndex = 1;
             label1.Text = "El estado actual de la máquina en la línea de producción es:";
             // 
             // button1
             // 
-            button1.Location = new Point(712, 399);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(717, 435);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(126, 51);
+            button1.Size = new Size(173, 76);
             button1.TabIndex = 2;
             button1.Text = "Volver";
             button1.UseVisualStyleBackColor = true;
@@ -59,9 +63,12 @@
             // 
             // estadoButton
             // 
-            estadoButton.Location = new Point(408, 384);
+            estadoButton.Cursor = Cursors.Hand;
+            estadoButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            estadoButton.Location = new Point(337, 435);
+            estadoButton.Margin = new Padding(4);
             estadoButton.Name = "estadoButton";
-            estadoButton.Size = new Size(276, 81);
+            estadoButton.Size = new Size(360, 76);
             estadoButton.TabIndex = 3;
             estadoButton.Text = "Marcar fallo";
             estadoButton.UseVisualStyleBackColor = true;
@@ -71,9 +78,10 @@
             // 
             estadoLabel.AutoSize = true;
             estadoLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            estadoLabel.Location = new Point(559, 238);
+            estadoLabel.Location = new Point(546, 261);
+            estadoLabel.Margin = new Padding(4, 0, 4, 0);
             estadoLabel.Name = "estadoLabel";
-            estadoLabel.Size = new Size(131, 28);
+            estadoLabel.Size = new Size(160, 32);
             estadoLabel.TabIndex = 4;
             estadoLabel.Text = "funcionando";
             // 
@@ -81,7 +89,8 @@
             // 
             pictureBox2.BackgroundImageLayout = ImageLayout.Center;
             pictureBox2.Image = Properties.Resources.bottom_bar;
-            pictureBox2.Location = new Point(0, 636);
+            pictureBox2.Location = new Point(0, 627);
+            pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(1280, 37);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -93,6 +102,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.header;
             pictureBox1.Location = new Point(0, 1);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1280, 83);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -101,9 +111,9 @@
             // 
             // ReporteMaquinaria
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1258, 664);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(estadoLabel);
@@ -111,6 +121,7 @@
             Controls.Add(button1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4);
             Name = "ReporteMaquinaria";
             Text = "Form1";
             FormClosed += ReporteMaquinaria_FormClosed;

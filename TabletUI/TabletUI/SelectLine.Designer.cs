@@ -49,226 +49,288 @@
             linea19 = new Button();
             linea20 = new Button();
             pictureBox1 = new PictureBox();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // linea1
             // 
-            linea1.Location = new Point(122, 90);
-            linea1.Margin = new Padding(3, 4, 3, 4);
+            linea1.Cursor = Cursors.Hand;
+            linea1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea1.Location = new Point(53, 64);
+            linea1.Margin = new Padding(4, 5, 4, 5);
             linea1.Name = "linea1";
-            linea1.Size = new Size(211, 128);
+            linea1.Size = new Size(264, 100);
             linea1.TabIndex = 0;
-            linea1.Text = "1";
+            linea1.Text = "Línea 1:";
+            linea1.TextAlign = ContentAlignment.MiddleLeft;
             linea1.UseVisualStyleBackColor = true;
             linea1.Click += button_Click;
             // 
             // linea2
             // 
-            linea2.Location = new Point(380, 90);
-            linea2.Margin = new Padding(3, 4, 3, 4);
+            linea2.Cursor = Cursors.Hand;
+            linea2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea2.Location = new Point(342, 64);
+            linea2.Margin = new Padding(4, 5, 4, 5);
             linea2.Name = "linea2";
-            linea2.Size = new Size(211, 128);
+            linea2.Size = new Size(264, 103);
             linea2.TabIndex = 1;
-            linea2.Text = "2";
+            linea2.Text = "Línea 2:";
+            linea2.TextAlign = ContentAlignment.MiddleLeft;
             linea2.UseVisualStyleBackColor = true;
             linea2.Click += button_Click;
             // 
             // linea3
             // 
-            linea3.Location = new Point(645, 90);
-            linea3.Margin = new Padding(3, 4, 3, 4);
+            linea3.Cursor = Cursors.Hand;
+            linea3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea3.Location = new Point(630, 64);
+            linea3.Margin = new Padding(4, 5, 4, 5);
             linea3.Name = "linea3";
-            linea3.Size = new Size(211, 128);
+            linea3.Size = new Size(264, 103);
             linea3.TabIndex = 2;
-            linea3.Text = "3";
+            linea3.Text = "Línea 3:";
+            linea3.TextAlign = ContentAlignment.MiddleLeft;
             linea3.UseVisualStyleBackColor = true;
             linea3.Click += button_Click;
             // 
             // linea4
             // 
-            linea4.Location = new Point(917, 90);
-            linea4.Margin = new Padding(3, 4, 3, 4);
+            linea4.Cursor = Cursors.Hand;
+            linea4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea4.Location = new Point(917, 63);
+            linea4.Margin = new Padding(4, 5, 4, 5);
             linea4.Name = "linea4";
-            linea4.Size = new Size(211, 128);
+            linea4.Size = new Size(264, 103);
             linea4.TabIndex = 3;
-            linea4.Text = "4";
+            linea4.Text = "Línea 4:";
+            linea4.TextAlign = ContentAlignment.MiddleLeft;
             linea4.UseVisualStyleBackColor = true;
             linea4.Click += button_Click;
             // 
             // linea5
             // 
-            linea5.Location = new Point(122, 251);
-            linea5.Margin = new Padding(3, 4, 3, 4);
+            linea5.Cursor = Cursors.Hand;
+            linea5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea5.Location = new Point(53, 189);
+            linea5.Margin = new Padding(4, 5, 4, 5);
             linea5.Name = "linea5";
-            linea5.Size = new Size(211, 128);
+            linea5.Size = new Size(264, 103);
             linea5.TabIndex = 4;
-            linea5.Text = "5";
+            linea5.Text = "Línea 5:";
+            linea5.TextAlign = ContentAlignment.MiddleLeft;
             linea5.UseVisualStyleBackColor = true;
             linea5.Click += button_Click;
             // 
             // linea6
             // 
-            linea6.Location = new Point(380, 251);
-            linea6.Margin = new Padding(3, 4, 3, 4);
+            linea6.Cursor = Cursors.Hand;
+            linea6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea6.Location = new Point(342, 189);
+            linea6.Margin = new Padding(4, 5, 4, 5);
             linea6.Name = "linea6";
-            linea6.Size = new Size(211, 128);
+            linea6.Size = new Size(264, 103);
             linea6.TabIndex = 5;
-            linea6.Text = "6";
+            linea6.Text = "Línea 6:";
+            linea6.TextAlign = ContentAlignment.MiddleLeft;
             linea6.UseVisualStyleBackColor = true;
             linea6.Click += button_Click;
             // 
             // linea7
             // 
-            linea7.Location = new Point(645, 251);
-            linea7.Margin = new Padding(3, 4, 3, 4);
+            linea7.Cursor = Cursors.Hand;
+            linea7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea7.Location = new Point(630, 189);
+            linea7.Margin = new Padding(4, 5, 4, 5);
             linea7.Name = "linea7";
-            linea7.Size = new Size(211, 128);
+            linea7.Size = new Size(264, 103);
             linea7.TabIndex = 6;
-            linea7.Text = "7";
+            linea7.Text = "Línea 7:";
+            linea7.TextAlign = ContentAlignment.MiddleLeft;
             linea7.UseVisualStyleBackColor = true;
             linea7.Click += button_Click;
             // 
             // linea8
             // 
-            linea8.Location = new Point(917, 251);
-            linea8.Margin = new Padding(3, 4, 3, 4);
+            linea8.Cursor = Cursors.Hand;
+            linea8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea8.Location = new Point(917, 189);
+            linea8.Margin = new Padding(4, 5, 4, 5);
             linea8.Name = "linea8";
-            linea8.Size = new Size(211, 128);
+            linea8.Size = new Size(264, 103);
             linea8.TabIndex = 7;
-            linea8.Text = "8";
+            linea8.Text = "Línea 8:";
+            linea8.TextAlign = ContentAlignment.MiddleLeft;
             linea8.UseVisualStyleBackColor = true;
             linea8.Click += button_Click;
             // 
             // linea9
             // 
-            linea9.Location = new Point(122, 423);
-            linea9.Margin = new Padding(3, 4, 3, 4);
+            linea9.Cursor = Cursors.Hand;
+            linea9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea9.Location = new Point(53, 314);
+            linea9.Margin = new Padding(4, 5, 4, 5);
             linea9.Name = "linea9";
-            linea9.Size = new Size(211, 128);
+            linea9.Size = new Size(264, 100);
             linea9.TabIndex = 8;
-            linea9.Text = "9";
+            linea9.Text = "Línea 9:";
+            linea9.TextAlign = ContentAlignment.MiddleLeft;
             linea9.UseVisualStyleBackColor = true;
             linea9.Click += button_Click;
             // 
             // linea10
             // 
-            linea10.Location = new Point(380, 423);
-            linea10.Margin = new Padding(3, 4, 3, 4);
+            linea10.Cursor = Cursors.Hand;
+            linea10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea10.Location = new Point(342, 314);
+            linea10.Margin = new Padding(4, 5, 4, 5);
             linea10.Name = "linea10";
-            linea10.Size = new Size(211, 128);
+            linea10.Size = new Size(264, 100);
             linea10.TabIndex = 9;
-            linea10.Text = "10";
+            linea10.Text = "Línea 10:";
+            linea10.TextAlign = ContentAlignment.MiddleLeft;
             linea10.UseVisualStyleBackColor = true;
             linea10.Click += button_Click;
             // 
             // linea11
             // 
-            linea11.Location = new Point(645, 423);
-            linea11.Margin = new Padding(3, 4, 3, 4);
+            linea11.Cursor = Cursors.Hand;
+            linea11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea11.Location = new Point(630, 314);
+            linea11.Margin = new Padding(4, 5, 4, 5);
             linea11.Name = "linea11";
-            linea11.Size = new Size(211, 128);
+            linea11.Size = new Size(264, 100);
             linea11.TabIndex = 10;
-            linea11.Text = "11";
+            linea11.Text = "Línea 11:";
+            linea11.TextAlign = ContentAlignment.MiddleLeft;
             linea11.UseVisualStyleBackColor = true;
             linea11.Click += button_Click;
             // 
             // linea12
             // 
-            linea12.Location = new Point(917, 423);
-            linea12.Margin = new Padding(3, 4, 3, 4);
+            linea12.Cursor = Cursors.Hand;
+            linea12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea12.Location = new Point(917, 314);
+            linea12.Margin = new Padding(4, 5, 4, 5);
             linea12.Name = "linea12";
-            linea12.Size = new Size(211, 128);
+            linea12.Size = new Size(264, 100);
             linea12.TabIndex = 11;
-            linea12.Text = "12";
+            linea12.Text = "Línea 12:";
+            linea12.TextAlign = ContentAlignment.MiddleLeft;
             linea12.UseVisualStyleBackColor = true;
             linea12.Click += button_Click;
             // 
             // linea13
             // 
-            linea13.Location = new Point(122, 597);
-            linea13.Margin = new Padding(3, 4, 3, 4);
+            linea13.Cursor = Cursors.Hand;
+            linea13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea13.Location = new Point(53, 439);
+            linea13.Margin = new Padding(4, 5, 4, 5);
             linea13.Name = "linea13";
-            linea13.Size = new Size(211, 128);
+            linea13.Size = new Size(264, 100);
             linea13.TabIndex = 12;
-            linea13.Text = "13";
+            linea13.Text = "Línea 13:";
+            linea13.TextAlign = ContentAlignment.MiddleLeft;
             linea13.UseVisualStyleBackColor = true;
             linea13.Click += button_Click;
             // 
             // linea14
             // 
-            linea14.Location = new Point(371, 597);
-            linea14.Margin = new Padding(3, 4, 3, 4);
+            linea14.Cursor = Cursors.Hand;
+            linea14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea14.Location = new Point(342, 439);
+            linea14.Margin = new Padding(4, 5, 4, 5);
             linea14.Name = "linea14";
-            linea14.Size = new Size(211, 128);
+            linea14.Size = new Size(264, 100);
             linea14.TabIndex = 13;
-            linea14.Text = "14";
+            linea14.Text = "Línea 14:";
+            linea14.TextAlign = ContentAlignment.MiddleLeft;
             linea14.UseVisualStyleBackColor = true;
             linea14.Click += button_Click;
             // 
             // linea15
             // 
-            linea15.Location = new Point(645, 597);
-            linea15.Margin = new Padding(3, 4, 3, 4);
+            linea15.Cursor = Cursors.Hand;
+            linea15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea15.Location = new Point(630, 439);
+            linea15.Margin = new Padding(4, 5, 4, 5);
             linea15.Name = "linea15";
-            linea15.Size = new Size(211, 128);
+            linea15.Size = new Size(264, 100);
             linea15.TabIndex = 14;
-            linea15.Text = "15";
+            linea15.Text = "Línea 15:";
+            linea15.TextAlign = ContentAlignment.MiddleLeft;
             linea15.UseVisualStyleBackColor = true;
             linea15.Click += button_Click;
             // 
             // linea16
             // 
-            linea16.Location = new Point(917, 610);
-            linea16.Margin = new Padding(3, 4, 3, 4);
+            linea16.Cursor = Cursors.Hand;
+            linea16.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea16.Location = new Point(917, 439);
+            linea16.Margin = new Padding(4, 5, 4, 5);
             linea16.Name = "linea16";
-            linea16.Size = new Size(211, 128);
+            linea16.Size = new Size(264, 100);
             linea16.TabIndex = 15;
-            linea16.Text = "16";
+            linea16.Text = "Línea 16:";
+            linea16.TextAlign = ContentAlignment.MiddleLeft;
             linea16.UseVisualStyleBackColor = true;
             linea16.Click += button_Click;
             // 
             // linea17
             // 
-            linea17.Location = new Point(122, 790);
-            linea17.Margin = new Padding(3, 4, 3, 4);
+            linea17.Cursor = Cursors.Hand;
+            linea17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea17.Location = new Point(53, 564);
+            linea17.Margin = new Padding(4, 5, 4, 5);
             linea17.Name = "linea17";
-            linea17.Size = new Size(211, 128);
+            linea17.Size = new Size(264, 100);
             linea17.TabIndex = 16;
-            linea17.Text = "17";
+            linea17.Text = "Línea 17:";
+            linea17.TextAlign = ContentAlignment.MiddleLeft;
             linea17.UseVisualStyleBackColor = true;
             linea17.Click += button_Click;
             // 
             // linea18
             // 
-            linea18.Location = new Point(380, 790);
-            linea18.Margin = new Padding(3, 4, 3, 4);
+            linea18.Cursor = Cursors.Hand;
+            linea18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea18.Location = new Point(342, 564);
+            linea18.Margin = new Padding(4, 5, 4, 5);
             linea18.Name = "linea18";
-            linea18.Size = new Size(211, 128);
+            linea18.Size = new Size(264, 100);
             linea18.TabIndex = 17;
-            linea18.Text = "18";
+            linea18.Text = "Línea 18:";
+            linea18.TextAlign = ContentAlignment.MiddleLeft;
             linea18.UseVisualStyleBackColor = true;
             linea18.Click += button_Click;
             // 
             // linea19
             // 
-            linea19.Location = new Point(645, 790);
-            linea19.Margin = new Padding(3, 4, 3, 4);
+            linea19.Cursor = Cursors.Hand;
+            linea19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea19.Location = new Point(630, 564);
+            linea19.Margin = new Padding(4, 5, 4, 5);
             linea19.Name = "linea19";
-            linea19.Size = new Size(211, 128);
+            linea19.Size = new Size(264, 100);
             linea19.TabIndex = 18;
-            linea19.Text = "19";
+            linea19.Text = "Línea 19:";
+            linea19.TextAlign = ContentAlignment.MiddleLeft;
             linea19.UseVisualStyleBackColor = true;
             linea19.Click += button_Click;
             // 
             // linea20
             // 
-            linea20.Location = new Point(917, 790);
-            linea20.Margin = new Padding(3, 4, 3, 4);
+            linea20.Cursor = Cursors.Hand;
+            linea20.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linea20.Location = new Point(917, 564);
+            linea20.Margin = new Padding(4, 5, 4, 5);
             linea20.Name = "linea20";
-            linea20.Size = new Size(211, 128);
+            linea20.Size = new Size(264, 100);
             linea20.TabIndex = 19;
-            linea20.Text = "20";
+            linea20.Text = "Línea 20:";
+            linea20.TextAlign = ContentAlignment.MiddleLeft;
             linea20.UseVisualStyleBackColor = true;
             linea20.Click += button_Click;
             // 
@@ -277,18 +339,30 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.header;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1280, 83);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.Size = new Size(1229, 83);
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox3.Image = Properties.Resources.bottom_bar;
+            pictureBox3.Location = new Point(0, 688);
+            pictureBox3.Margin = new Padding(4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(1229, 37);
+            pictureBox3.TabIndex = 24;
+            pictureBox3.TabStop = false;
+            // 
             // SelectLine
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1258, 664);
+            Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Controls.Add(linea20);
             Controls.Add(linea19);
@@ -311,13 +385,13 @@
             Controls.Add(linea2);
             Controls.Add(linea1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "SelectLine";
             Text = "SelectLine";
             FormClosed += SelectLine_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -342,5 +416,6 @@
         private Button linea19;
         private Button linea20;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }

@@ -39,18 +39,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(579, 275);
+            label1.Location = new Point(525, 234);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(146, 20);
+            label1.Size = new Size(174, 25);
             label1.TabIndex = 0;
             label1.Text = "Registrado con éxito";
             // 
             // button1
             // 
-            button1.Location = new Point(536, 425);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(489, 362);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(232, 88);
+            button1.Size = new Size(250, 100);
             button1.TabIndex = 1;
             button1.Text = "Entendido";
             button1.UseVisualStyleBackColor = true;
@@ -61,6 +64,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.header;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1280, 83);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -71,7 +75,8 @@
             // 
             pictureBox2.BackgroundImageLayout = ImageLayout.Center;
             pictureBox2.Image = Properties.Resources.bottom_bar;
-            pictureBox2.Location = new Point(0, 636);
+            pictureBox2.Location = new Point(0, 627);
+            pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(1280, 37);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -80,15 +85,15 @@
             // 
             // RegistradoEmp
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 673);
+            ClientSize = new Size(1258, 664);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "RegistradoEmp";
             Text = "RegistradoEmp";
             FormClosed += RegistradoEmp_FormClosed;

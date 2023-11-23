@@ -67,5 +67,10 @@ namespace TabletUI
         {
             Estadisticas.RunStats();
         }
+
+        private void OpcionesSupervisor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

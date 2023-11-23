@@ -39,5 +39,10 @@ namespace TabletUI
         {
             Estadisticas.RunStats();
         }
+
+        private void PantallaIngreso_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

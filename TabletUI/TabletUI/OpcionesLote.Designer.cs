@@ -39,9 +39,12 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1030, 436);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(1041, 110);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(120, 158);
+            button1.Size = new Size(150, 159);
             button1.TabIndex = 1;
             button1.Text = "Nuevo lote";
             button1.UseVisualStyleBackColor = true;
@@ -49,9 +52,12 @@
             // 
             // button2
             // 
-            button2.Location = new Point(1030, 149);
+            button2.Cursor = Cursors.Hand;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(1041, 300);
+            button2.Margin = new Padding(4);
             button2.Name = "button2";
-            button2.Size = new Size(120, 60);
+            button2.Size = new Size(150, 75);
             button2.TabIndex = 2;
             button2.Text = "Regresar";
             button2.UseVisualStyleBackColor = true;
@@ -60,10 +66,11 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(41, 149);
+            listBox1.ItemHeight = 25;
+            listBox1.Location = new Point(72, 110);
+            listBox1.Margin = new Padding(4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(954, 444);
+            listBox1.Size = new Size(931, 479);
             listBox1.TabIndex = 3;
             listBox1.MouseDoubleClick += listBox1_MouseDoubleClick;
             // 
@@ -71,7 +78,8 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.bottom_bar;
-            pictureBox1.Location = new Point(-2, 654);
+            pictureBox1.Location = new Point(0, 627);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1280, 37);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -83,6 +91,7 @@
             pictureBox2.BackgroundImageLayout = ImageLayout.Center;
             pictureBox2.Image = Properties.Resources.header;
             pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(1280, 83);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -91,15 +100,16 @@
             // 
             // OpcionesLote
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1172, 691);
+            ClientSize = new Size(1258, 664);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(listBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4);
             Name = "OpcionesLote";
             Text = "OpcionesLote";
             FormClosed += OpcionesLote_FormClosed;
