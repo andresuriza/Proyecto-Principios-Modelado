@@ -1,0 +1,12 @@
+# Visual Studio Cache
+.vs/*
+TabletUI/.vs/*
+TabletUI/TabletUI/.vs/*
+
+# OBJ Cache
+TabletUI/TabletUI/obj/*
+TabletUI/BaseDatos/obj/*
+
+# Exports
+TabletUI/TabletUI/bin/*
+TabletUI/BaseDatos/bin/*
