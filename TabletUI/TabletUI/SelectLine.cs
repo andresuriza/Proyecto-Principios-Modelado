@@ -1,4 +1,5 @@
 ﻿using BaseDatos.Controllers;
+using BaseDatos.Models;
 
 namespace TabletUI
 {
@@ -17,12 +18,26 @@ namespace TabletUI
             this.usrTipo = usrTipo;
             this.codigo = codigo;
             InitializeComponent();
+            set_button_available();
+        }
+
+        // Método de 
+        private void set_button_available(){
+
+             List<LotePorLinea> all_lines = lotControllerLinea.GetAllLotesPorLineas();
+
+            foreach (LotePorLinea i in all_lines)
+            {
+
+                Console.WriteLine(i.Lineaid);
+            }
         }
 
         // Metodo que procesa la ventana a abrir al seleccionar una linea 
         private void button_Click(object sender, EventArgs e)
         {
-            int linea = int.Parse((sender as Button).Text);
+            string linea_num_index = char.ToString((sender as Button).Text[(sender as Button).Text.Length - 1]);
+            int linea = int.Parse(linea_num_index);
             string cedula = uc.GetUsuarioByCodigo(codigo).Cedula;
             int n = 0;
 
