@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj": {}
+    "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj": {
+    "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
+        "projectUniqueName": "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
         "projectName": "BaseDatos",
-        "projectPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
-        "packagesPath": "C:\\Users\\andres\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\obj\\",
+        "projectPath": "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,21 +83,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj": {
+    "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
+        "projectUniqueName": "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
         "projectName": "TabletUI",
-        "projectPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
-        "packagesPath": "C:\\Users\\andres\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\obj\\",
+        "projectPath": "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\TabletUI.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\TabletUI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -107,8 +115,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj": {
-                "projectPath": "C:\\Users\\andres\\Documents\\TEC\\Principios de modelado\\Proyecto\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj"
+              "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj": {
+                "projectPath": "D:\\Repos\\TEC\\Proyecto-Principios-Modelado\\TabletUI\\BaseDatos\\BaseDatos.csproj"
               }
             }
           }
@@ -165,7 +173,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
