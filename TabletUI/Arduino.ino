@@ -20,7 +20,6 @@ try:
             plt.title('Niveles de Satisfacción de Empleados')
             plt.xlabel('Nivel de Satisfacción')
             plt.ylabel('Número de Evaluaciones')
-            plt.text(1, total_evaluaciones // 2, f'Promedio: {promedio_satisfaccion:.2f}', fontsize=10)
             plt.show()
             plt.pause(0.1)
 
